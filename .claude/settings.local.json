@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($screenshotPath = \"C:\\\\Users\\\\tongy\\\\AppData\\\\Local\\\\Temp\\\\wildguard-screenshot.png\"; & \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\" --headless --screenshot=\"$screenshotPath\" --window-size=1280,900 --no-sandbox --disable-gpu http://localhost:5173 2>$null; Start-Sleep -Seconds 4; if \\(Test-Path $screenshotPath\\) { Write-Output \"Screenshot saved to $screenshotPath\" } else { Write-Output \"Screenshot not found\" })"
+    ]
+  }
+}
