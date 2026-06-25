@@ -1,35 +1,36 @@
 import { useState, useEffect } from "react";
+import rangerLabel from "../ranger_label.png";
 
-// ─── 数据 ───────────────────────────────────────────────────────────────────
+// ─── Data ────────────────────────────────────────────────────────────────────
 
 const PRODUCTS = [
-  { id: 1, emoji: "🦁", bg: "#f0e8d8", series: "狮子系列", animal: "非洲雄狮", name: "Pride 短袖", price: 49, donation: 4.9, org: "马赛马拉保护区", desc: "每一件，守护肯尼亚草原上最后的狮群。" },
-  { id: 2, emoji: "🐘", bg: "#e8ede8", series: "大象系列", animal: "非洲象", name: "温柔巨人 托特包", price: 35, donation: 3.5, org: "安博塞利信托", desc: "你的每一次购物，为象群迁徙保留一条通道。" },
-  { id: 3, emoji: "🦏", bg: "#ede8e0", series: "犀牛系列", animal: "白犀牛", name: "Last Thunder 卫衣", price: 89, donation: 8.9, org: "拯救犀牛国际", desc: "北白犀功能性灭绝。我们为最后的南白犀而战。" },
-  { id: 4, emoji: "🐆", bg: "#e8e0d8", series: "豹系列", animal: "雪豹", name: "幽灵 帽衫", price: 79, donation: 7.9, org: "雪豹信托基金", desc: "喜马拉雅山脉的幽灵，正在消失。你的购买让它们留下来。" },
-  { id: 5, emoji: "🐋", bg: "#d8e8ed", series: "鲸鱼系列", animal: "蓝鲸", name: "深海 长袖", price: 59, donation: 5.9, org: "国际鲸豚保护组织", desc: "地球上最大的生命，正面临最小的关注。" },
-  { id: 6, emoji: "🦅", bg: "#e0e8f0", series: "雕鹰系列", animal: "菲律宾鹰", name: "云端 T恤", price: 45, donation: 4.5, org: "菲律宾鹰基金会", desc: "翼展两米，现存不足800只。每件衣服资助一次野外监测。" },
+  { id: 1, emoji: "🦁", bg: "#f0e8d8", series: "Lion Series", animal: "African Lion", name: "Pride Tee", price: 49, donation: 4.9, org: "Conservation Partner", desc: "Each piece protects the last lion prides on Kenya's savanna." },
+  { id: 2, emoji: "🐘", bg: "#e8ede8", series: "Elephant Series", animal: "African Elephant", name: "Gentle Giant Tote", price: 35, donation: 3.5, org: "Conservation Partner", desc: "Every purchase helps preserve a corridor for elephant migration." },
+  { id: 3, emoji: "🦏", bg: "#ede8e0", series: "Rhino Series", animal: "White Rhino", name: "Last Thunder Hoodie", price: 89, donation: 8.9, org: "Conservation Partner", desc: "Northern white rhinos are functionally extinct. We fight for the last southern white rhinos." },
+  { id: 4, emoji: "🐆", bg: "#e8e0d8", series: "Leopard Series", animal: "Snow Leopard", name: "Ghost Hoodie", price: 79, donation: 7.9, org: "Conservation Partner", desc: "The ghost of the Himalayas is disappearing. Your purchase helps them stay." },
+  { id: 5, emoji: "🐋", bg: "#d8e8ed", series: "Whale Series", animal: "Blue Whale", name: "Deep Sea Long Sleeve", price: 59, donation: 5.9, org: "Conservation Partner", desc: "The largest life on Earth faces the smallest attention." },
+  { id: 6, emoji: "🦅", bg: "#e0e8f0", series: "Eagle Series", animal: "Philippine Eagle", name: "Cloud Tee", price: 45, donation: 4.5, org: "Conservation Partner", desc: "Wingspan of two meters, fewer than 800 left. Each garment funds one field survey." },
 ];
 
 const STORIES = [
   {
-    id: 1, emoji: "🦁", tag: "非洲雄狮 · 肯尼亚", title: "辛巴的王国",
-    summary: "马赛马拉狮群数量20年内下降40%。你的购买资助了22个狮群的反盗猎巡逻。",
-    full: "在肯尼亚马赛马拉，辛巴和他的族群曾经统治着一片广阔的草原。但随着人类活动的扩张，狮子的栖息地不断缩减。过去20年，这里的狮群数量下降了40%。\n\n我们与马赛马拉信托基金合作，资助专业巡逻队24小时守护狮群。每一件Pride短袖，直接支付一名巡逻员三天的薪水。\n\n你买的不只是一件衣服，是一片草原的未来。",
+    id: 1, emoji: "🦁", tag: "African Lion · Kenya", title: "Simba's Kingdom",
+    summary: "Lion populations in the Maasai Mara have dropped 40% over 20 years. Your purchase funds anti-poaching patrols protecting 22 prides.",
+    full: "In Kenya's Maasai Mara, Simba and his pride once ruled a vast savanna. But as human activity expanded, lion habitat shrank. Over the past 20 years, the lion population here has fallen by 40%.\n\nWe work with our conservation partner to fund professional patrol teams guarding lion prides around the clock. Every Pride Tee directly covers three days of a ranger's wages.\n\nYou're not just buying a shirt — you're buying a future for the savanna.",
   },
   {
-    id: 2, emoji: "🐘", tag: "非洲象 · 安博塞利", title: "Echo 的家族",
-    summary: "Echo 领导她的家族长达45年。如今她的后代被全天候监测，WildGuard 今年资助了三个追踪项圈。",
-    full: "Echo 是有史以来被研究最深入的大象之一。她领导着安博塞利最大的象群，走过了45年的岁月。2009年她离开了，但她的子孙们还在。\n\n象牙贸易让非洲象数量在过去十年内减少了三分之一。我们与安博塞利大象信托合作，为象群安装GPS追踪项圈，实时监测它们的迁徙路线。\n\n每一个托特包的销售，资助一个项圈一个月的卫星数据费用。",
+    id: 2, emoji: "🐘", tag: "African Elephant · Amboseli", title: "Echo's Family",
+    summary: "Echo led her family for 45 years. Her descendants are monitored around the clock — CK Safari Culture Goods funded three tracking collars this year.",
+    full: "Echo is one of the most studied elephants in history. She led the largest herd in Amboseli through 45 years of life. She passed in 2009, but her descendants carry on.\n\nThe ivory trade has reduced Africa's elephant population by a third over the past decade. We work with our conservation partner to fit herds with GPS tracking collars that monitor migration routes in real time.\n\nEvery Gentle Giant Tote sale covers one month of satellite data fees for one collar.",
   },
   {
-    id: 3, emoji: "🦏", tag: "白犀牛 · 南非", title: "只剩两头",
-    summary: "北白犀功能性灭绝。我们与Ol Pejeta合作，守护最后的南白犀种群。",
-    full: "2018年，最后一头雄性北白犀Sudan离开了这个世界。现在，地球上只剩两头北白犀——都是雌性，都无法自然繁殖。\n\nOl Pejeta保护区是它们最后的家。科学家们正在尝试体外受精技术，试图从灭绝边缘挽救这个物种。\n\n我们的Last Thunder卫衣，每一件捐出$8.90，直接支持这项抢救性繁育项目。这不是保护，这是复活。",
+    id: 3, emoji: "🦏", tag: "White Rhino · South Africa", title: "Only Two Left",
+    summary: "Northern white rhinos are functionally extinct. We support Ol Pejeta Conservancy in protecting the last southern white rhino population.",
+    full: "In 2018, the last male northern white rhino, Sudan, left this world. Now only two northern white rhinos remain on Earth — both female, both unable to reproduce naturally.\n\nOl Pejeta Conservancy is their last home. Scientists are attempting IVF techniques to pull the species back from the brink of extinction.\n\nOur Last Thunder Hoodie donates $8.90 per sale directly to this emergency breeding program. This isn't conservation — it's resurrection.",
   },
 ];
 
-// ─── 颜色变量 ────────────────────────────────────────────────────────────────
+// ─── Color Variables ─────────────────────────────────────────────────────────
 
 const C = {
   earth: "#2C3A2E",
@@ -43,14 +44,14 @@ const C = {
   muted: "#7A6F63",
 };
 
-// ─── 通用组件 ─────────────────────────────────────────────────────────────────
+// ─── Shared Components ────────────────────────────────────────────────────────
 
 function Nav({ page, setPage }) {
   const links = [
-    { label: "商店", key: "shop" },
-    { label: "我们的使命", key: "mission" },
-    { label: "野生故事", key: "stories" },
-    { label: "关于我们", key: "about" },
+    { label: "Shop", key: "shop" },
+    { label: "Our Mission", key: "mission" },
+    { label: "Wild Stories", key: "stories" },
+    { label: "About Us", key: "about" },
   ];
   return (
     <nav style={{
@@ -61,12 +62,12 @@ function Nav({ page, setPage }) {
       backdropFilter: "blur(10px)",
       borderBottom: "1px solid rgba(200,169,110,0.08)",
     }}>
-      <div
+      <img
+        src={rangerLabel}
+        alt="CK Safari Culture Goods"
         onClick={() => setPage("home")}
-        style={{ fontFamily: "Georgia,serif", fontSize: 21, color: C.sandLight, cursor: "pointer", letterSpacing: "0.02em" }}
-      >
-        Wild<span style={{ color: C.sand, fontStyle: "italic" }}>守护</span>
-      </div>
+        style={{ height: 48, cursor: "pointer", display: "block" }}
+      />
       <div style={{ display: "flex", gap: 28 }}>
         {links.map(l => (
           <button key={l.key} onClick={() => setPage(l.key)} style={{
@@ -84,7 +85,7 @@ function Nav({ page, setPage }) {
         padding: "9px 22px", border: "none", borderRadius: 2,
         fontSize: 12, fontWeight: 600, letterSpacing: "0.08em",
         cursor: "pointer", fontFamily: "inherit",
-      }}>支持野生动物</button>
+      }}>Browse Collection</button>
     </nav>
   );
 }
@@ -94,17 +95,15 @@ function Footer({ setPage }) {
     <footer style={{ background: C.dark, padding: "48px 48px 0" }}>
       <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, maxWidth: 1100, margin: "0 auto" }}>
         <div>
-          <div style={{ fontFamily: "Georgia,serif", fontSize: 20, color: C.sandLight, marginBottom: 12 }}>
-            Wild<span style={{ color: C.sand, fontStyle: "italic" }}>守护</span>
-          </div>
+          <img src={rangerLabel} alt="CK Safari Culture Goods" style={{ height: 52, display: "block", marginBottom: 12 }} />
           <p style={{ fontSize: 13, color: "rgba(200,169,110,0.4)", lineHeight: 1.7, maxWidth: 220 }}>
-            每一件产品，10%直接用于保护野生动物。不是承诺，是契约。
+            Every product: 10% directly supports wildlife conservation. Not a promise — a commitment.
           </p>
         </div>
         {[
-          { title: "商店", items: [["所有产品","shop"],["狮子系列","shop"],["大象系列","shop"],["犀牛系列","shop"]] },
-          { title: "品牌", items: [["我们的使命","mission"],["野生故事","stories"],["合作伙伴","about"],["年度报告","about"]] },
-          { title: "其他", items: [["捐款政策","about"],["隐私政策","about"],["联系我们","about"]] },
+          { title: "Shop", items: [["All Products","shop"],["Lion Series","shop"],["Elephant Series","shop"],["Rhino Series","shop"]] },
+          { title: "Brand", items: [["Our Mission","mission"],["Wild Stories","stories"],["Partners","about"],["Annual Report","about"]] },
+          { title: "More", items: [["Donation Policy","about"],["Privacy Policy","about"],["Contact Us","about"]] },
         ].map(col => (
           <div key={col.title}>
             <div style={{ fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(200,169,110,0.35)", marginBottom: 16 }}>{col.title}</div>
@@ -122,14 +121,14 @@ function Footer({ setPage }) {
         maxWidth: 1100, margin: "40px auto 0", borderTop: "1px solid rgba(200,169,110,0.08)",
         padding: "20px 0", display: "flex", justifyContent: "space-between",
       }}>
-        <span style={{ fontSize: 12, color: "rgba(200,169,110,0.2)" }}>© 2025 Wild守护. 保留所有权利。</span>
-        <span style={{ fontSize: 12, color: "rgba(200,169,110,0.2)" }}>10% 捐款承诺 · 注册保护品牌</span>
+        <span style={{ fontSize: 12, color: "rgba(200,169,110,0.2)" }}>© 2025 CK Safari Culture Goods. All rights reserved.</span>
+        <span style={{ fontSize: 12, color: "rgba(200,169,110,0.2)" }}>10% Donation Commitment · Registered Conservation Brand</span>
       </div>
     </footer>
   );
 }
 
-// ─── 首页 ─────────────────────────────────────────────────────────────────────
+// ─── Home Page ────────────────────────────────────────────────────────────────
 
 function HomePage({ setPage }) {
   return (
@@ -149,25 +148,25 @@ function HomePage({ setPage }) {
         <div style={{ position: "relative", zIndex: 2, padding: "0 24px" }}>
           <div style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: C.sand, marginBottom: 24, display: "flex", alignItems: "center", gap: 14, justifyContent: "center" }}>
             <span style={{ display: "block", width: 32, height: 1, background: C.sand, opacity: 0.5 }} />
-            穿上野性，守护自然
+            Wear the Wild, Protect Nature
             <span style={{ display: "block", width: 32, height: 1, background: C.sand, opacity: 0.5 }} />
           </div>
           <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(44px,6vw,84px)", lineHeight: 1.06, color: C.white, maxWidth: 680, margin: "0 auto 18px" }}>
-            每一次购买<br /><em style={{ color: C.sand, fontStyle: "italic" }}>都在拯救生命</em>
+            Every Purchase<br /><em style={{ color: C.sand, fontStyle: "italic" }}>Saves a Life</em>
           </h1>
           <p style={{ fontSize: 16, color: "rgba(253,250,245,0.55)", maxWidth: 400, margin: "0 auto 44px", lineHeight: 1.75, fontWeight: 300 }}>
-            每件产品售出，10%直接捐给野生动物保护区。不是广告语，是公司章程里的法律承诺。
+            10% of every product sold goes directly to wildlife conservation reserves. Not a tagline — it's written into our articles of incorporation.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center" }}>
-            <button onClick={() => setPage("shop")} style={{ background: C.sand, color: C.dark, padding: "15px 36px", border: "none", borderRadius: 2, fontSize: 13, fontWeight: 600, letterSpacing: "0.08em", cursor: "pointer", fontFamily: "inherit" }}>立即购物</button>
-            <button onClick={() => setPage("mission")} style={{ border: `1px solid rgba(232,213,168,0.35)`, color: C.sandLight, padding: "15px 36px", background: "none", borderRadius: 2, fontSize: 13, letterSpacing: "0.08em", cursor: "pointer", fontFamily: "inherit" }}>了解使命</button>
+            <button onClick={() => setPage("shop")} style={{ background: C.sand, color: C.dark, padding: "15px 36px", border: "none", borderRadius: 2, fontSize: 13, fontWeight: 600, letterSpacing: "0.08em", cursor: "pointer", fontFamily: "inherit" }}>View Collection</button>
+            <button onClick={() => setPage("mission")} style={{ border: `1px solid rgba(232,213,168,0.35)`, color: C.sandLight, padding: "15px 36px", background: "none", borderRadius: 2, fontSize: 13, letterSpacing: "0.08em", cursor: "pointer", fontFamily: "inherit" }}>Our Mission</button>
           </div>
         </div>
       </div>
 
-      {/* 数据条 */}
+      {/* Stats Bar */}
       <div style={{ background: C.earth, padding: "30px 48px", display: "flex", justifyContent: "center", gap: 72, flexWrap: "wrap" }}>
-        {[["¥584,320","累计捐款"],["1,247","保护动物数"],["6","合作保护区"],["12","覆盖国家"]].map(([num, label]) => (
+        {[["¥584,320","Total Donated"],["1,247","Animals Protected"],["6","Partner Reserves"],["12","Countries"]].map(([num, label]) => (
           <div key={label} style={{ textAlign: "center" }}>
             <span style={{ fontFamily: "Georgia,serif", fontSize: 34, color: C.sand, display: "block", lineHeight: 1 }}>{num}</span>
             <span style={{ fontSize: 11, color: "rgba(200,169,110,0.55)", letterSpacing: "0.12em", textTransform: "uppercase", marginTop: 5, display: "block" }}>{label}</span>
@@ -175,47 +174,47 @@ function HomePage({ setPage }) {
         ))}
       </div>
 
-      {/* 使命预览 */}
+      {/* Mission Preview */}
       <div style={{ background: `linear-gradient(to right, ${C.earth} 50%, ${C.white} 50%)` }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: 460 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden" }}>
             <div style={{ position: "absolute", fontSize: 260, opacity: 0.07, color: C.sand, userSelect: "none" }}>🐘</div>
             <div style={{ position: "relative", textAlign: "center", padding: 48 }}>
               <span style={{ fontFamily: "Georgia,serif", fontSize: 80, color: C.sand, display: "block", lineHeight: 1 }}>10%</span>
-              <div style={{ fontSize: 13, color: "rgba(200,169,110,0.65)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 14, lineHeight: 1.6 }}>每件产品售出<br />直接捐向保护一线</div>
+              <div style={{ fontSize: 13, color: "rgba(200,169,110,0.65)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 14, lineHeight: 1.6 }}>Of every product sold<br />goes directly to conservation</div>
             </div>
           </div>
           <div style={{ padding: "64px 60px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: C.earthLight, marginBottom: 16 }}>我们的使命</span>
-            <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(26px,3vw,40px)", color: C.earth, lineHeight: 1.15, marginBottom: 20, maxWidth: 420 }}>时尚，是保护野生动物最有力的武器</h2>
+            <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: C.earthLight, marginBottom: 16 }}>Our Mission</span>
+            <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(26px,3vw,40px)", color: C.earth, lineHeight: 1.15, marginBottom: 20, maxWidth: 420 }}>Fashion is the most powerful weapon for wildlife conservation</h2>
             <blockquote style={{ borderLeft: `3px solid ${C.sand}`, paddingLeft: 20, margin: "24px 0", fontFamily: "Georgia,serif", fontSize: 17, color: C.earth, lineHeight: 1.65, fontStyle: "italic" }}>
-              "我们相信，一件T恤应该有意义。"
+              "We believe a T-shirt should mean something."
             </blockquote>
-            <p style={{ fontSize: 15, lineHeight: 1.75, color: C.muted }}>我们与非洲、亚洲、南美洲的一线保护机构直接合作。每次购买，绑定一个真实的动物、一片真实的栖息地、一个真实的保护项目。</p>
-            <button onClick={() => setPage("mission")} style={{ marginTop: 28, alignSelf: "flex-start", background: C.earth, color: C.sandLight, padding: "12px 28px", border: "none", borderRadius: 2, fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", cursor: "pointer", fontFamily: "inherit" }}>阅读完整故事</button>
+            <p style={{ fontSize: 15, lineHeight: 1.75, color: C.muted }}>We work directly with frontline conservation organizations across Africa, Asia, and South America. Every purchase is tied to a real animal, a real habitat, and a real conservation project.</p>
+            <button onClick={() => setPage("mission")} style={{ marginTop: 28, alignSelf: "flex-start", background: C.earth, color: C.sandLight, padding: "12px 28px", border: "none", borderRadius: 2, fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", cursor: "pointer", fontFamily: "inherit" }}>Read the Full Story</button>
           </div>
         </div>
       </div>
 
-      {/* 产品预览 */}
+      {/* Product Preview */}
       <div style={{ padding: "80px 48px", maxWidth: 1100, margin: "0 auto" }}>
-        <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: C.earthLight, marginBottom: 14, display: "block" }}>精选产品</span>
+        <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: C.earthLight, marginBottom: 14, display: "block" }}>Featured Products</span>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 40 }}>
-          <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(26px,3vw,40px)", color: C.earth, lineHeight: 1.15 }}>每件产品，<br />守护一个物种</h2>
-          <button onClick={() => setPage("shop")} style={{ background: "none", border: `1px solid ${C.earth}`, color: C.earth, padding: "10px 24px", borderRadius: 2, fontSize: 12, cursor: "pointer", fontFamily: "inherit", letterSpacing: "0.06em" }}>查看全部 →</button>
+          <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(26px,3vw,40px)", color: C.earth, lineHeight: 1.15 }}>Each Product,<br />Protects a Species</h2>
+          <button onClick={() => setPage("shop")} style={{ background: "none", border: `1px solid ${C.earth}`, color: C.earth, padding: "10px 24px", borderRadius: 2, fontSize: 12, cursor: "pointer", fontFamily: "inherit", letterSpacing: "0.06em" }}>View All →</button>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
           {PRODUCTS.slice(0, 3).map(p => <ProductCard key={p.id} p={p} />)}
         </div>
       </div>
 
-      {/* 故事预览 */}
+      {/* Stories Preview */}
       <div style={{ background: C.dark }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "80px 48px" }}>
-          <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(200,169,110,0.45)", marginBottom: 14, display: "block" }}>野生故事</span>
+          <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(200,169,110,0.45)", marginBottom: 14, display: "block" }}>Wild Stories</span>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 40 }}>
-            <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(26px,3vw,40px)", color: C.sandLight, lineHeight: 1.15 }}>你在守护的生命</h2>
-            <button onClick={() => setPage("stories")} style={{ background: "none", border: `1px solid rgba(200,169,110,0.3)`, color: C.sand, padding: "10px 24px", borderRadius: 2, fontSize: 12, cursor: "pointer", fontFamily: "inherit" }}>更多故事 →</button>
+            <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(26px,3vw,40px)", color: C.sandLight, lineHeight: 1.15 }}>The Lives You're Protecting</h2>
+            <button onClick={() => setPage("stories")} style={{ background: "none", border: `1px solid rgba(200,169,110,0.3)`, color: C.sand, padding: "10px 24px", borderRadius: 2, fontSize: 12, cursor: "pointer", fontFamily: "inherit" }}>More Stories →</button>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "rgba(200,169,110,0.08)", border: "1px solid rgba(200,169,110,0.08)" }}>
             {STORIES.map(s => (
@@ -233,7 +232,7 @@ function HomePage({ setPage }) {
   );
 }
 
-// ─── 商品卡片 ─────────────────────────────────────────────────────────────────
+// ─── Product Card ─────────────────────────────────────────────────────────────
 
 function ProductCard({ p }) {
   const [hover, setHover] = useState(false);
@@ -256,28 +255,27 @@ function ProductCard({ p }) {
         <div style={{ fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: C.earthLight, marginBottom: 5 }}>{p.animal}</div>
         <div style={{ fontFamily: "Georgia,serif", fontSize: 19, color: C.earth, marginBottom: 10 }}>{p.name}</div>
         <div style={{ fontSize: 12, color: C.earthLight, background: "rgba(74,103,65,0.08)", padding: "5px 12px", borderRadius: 2, display: "inline-block", marginBottom: 16 }}>¥{p.donation} → {p.org}</div>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: 16, borderTop: "1px solid rgba(44,58,46,0.08)" }}>
+        <div style={{ paddingTop: 16, borderTop: "1px solid rgba(44,58,46,0.08)" }}>
           <span style={{ fontFamily: "Georgia,serif", fontSize: 22, color: C.earth }}>¥{p.price}</span>
-          <button style={{ background: C.earth, color: C.sandLight, padding: "8px 20px", border: "none", borderRadius: 2, fontSize: 11, fontWeight: 600, letterSpacing: "0.08em", cursor: "pointer", fontFamily: "inherit" }}>加入购物车</button>
         </div>
       </div>
     </div>
   );
 }
 
-// ─── 商店页 ───────────────────────────────────────────────────────────────────
+// ─── Shop Page ────────────────────────────────────────────────────────────────
 
 function ShopPage() {
-  const [filter, setFilter] = useState("全部");
-  const filters = ["全部", "狮子系列", "大象系列", "犀牛系列", "豹系列", "鲸鱼系列", "雕鹰系列"];
-  const filtered = filter === "全部" ? PRODUCTS : PRODUCTS.filter(p => p.series === filter);
+  const [filter, setFilter] = useState("All");
+  const filters = ["All", "Lion Series", "Elephant Series", "Rhino Series", "Leopard Series", "Whale Series", "Eagle Series"];
+  const filtered = filter === "All" ? PRODUCTS : PRODUCTS.filter(p => p.series === filter);
   return (
     <div style={{ paddingTop: 80, background: C.cream, minHeight: "100vh" }}>
       <div style={{ background: C.earth, padding: "60px 48px 48px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(200,169,110,0.5)", display: "block", marginBottom: 14 }}>精选系列</span>
-          <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(32px,4vw,52px)", color: C.sandLight, marginBottom: 12 }}>每件产品，守护一个物种</h1>
-          <p style={{ fontSize: 15, color: "rgba(200,169,110,0.55)", maxWidth: 460, lineHeight: 1.7 }}>购买 = 直接参与保护。每件产品标注了具体捐款金额和受益机构。</p>
+          <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(200,169,110,0.5)", display: "block", marginBottom: 14 }}>Featured Collections</span>
+          <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(32px,4vw,52px)", color: C.sandLight, marginBottom: 12 }}>Each Product, Protects a Species</h1>
+          <p style={{ fontSize: 15, color: "rgba(200,169,110,0.55)", maxWidth: 460, lineHeight: 1.7 }}>Every product is tied to a real animal and a real conservation project. Each listing shows the exact donation amount per item sold.</p>
         </div>
       </div>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "40px 48px" }}>
@@ -300,7 +298,7 @@ function ShopPage() {
   );
 }
 
-// ─── 使命页 ───────────────────────────────────────────────────────────────────
+// ─── Mission Page ─────────────────────────────────────────────────────────────
 
 function MissionPage({ setPage }) {
   return (
@@ -308,24 +306,24 @@ function MissionPage({ setPage }) {
       {/* Hero */}
       <div style={{ background: C.dark, padding: "80px 48px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
-          <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(200,169,110,0.45)", display: "block", marginBottom: 20 }}>我们的使命</span>
-          <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(34px,4.5vw,60px)", color: C.sandLight, lineHeight: 1.1, marginBottom: 24 }}>时尚，是我们最有力的<em style={{ color: C.sand }}>武器</em></h1>
-          <p style={{ fontSize: 16, color: "rgba(253,250,245,0.5)", maxWidth: 560, margin: "0 auto", lineHeight: 1.75 }}>Wild守护成立于对一个问题的思考：为什么环保和美学不能共存？</p>
+          <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(200,169,110,0.45)", display: "block", marginBottom: 20 }}>Our Mission</span>
+          <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(34px,4.5vw,60px)", color: C.sandLight, lineHeight: 1.1, marginBottom: 24 }}>Fashion is Our Most Powerful <em style={{ color: C.sand }}>Weapon</em></h1>
+          <p style={{ fontSize: 16, color: "rgba(253,250,245,0.5)", maxWidth: 560, margin: "0 auto", lineHeight: 1.75 }}>CK Safari Culture Goods was founded on one question: why can't conservation and aesthetics coexist?</p>
         </div>
       </div>
 
-      {/* 故事 */}
+      {/* Story */}
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "80px 48px" }}>
         <div style={{ borderLeft: `3px solid ${C.sand}`, paddingLeft: 24, marginBottom: 48 }}>
           <p style={{ fontFamily: "Georgia,serif", fontSize: 22, color: C.earth, lineHeight: 1.65, fontStyle: "italic" }}>
-            "我们不想做又一个贴着'环保'标签的品牌。我们想让每一件衣服，都成为一个保护行动。"
+            "We didn't want to be yet another brand slapping 'eco' on its label. We wanted every garment to become a conservation action."
           </p>
-          <span style={{ fontSize: 13, color: C.muted, marginTop: 12, display: "block" }}>— 创始人</span>
+          <span style={{ fontSize: 13, color: C.muted, marginTop: 12, display: "block" }}>— Founder</span>
         </div>
         {[
-          { title: "为什么是10%？", body: "行业标准是1-2%。我们选择10%，是因为我们认为这是真正能产生影响的数字。这个承诺被写入公司章程，不是营销策略，是法律义务。" },
-          { title: "我们怎么选合作伙伴？", body: "我们只与直接在野外工作的机构合作。不是总部在纽约的大型NGO，而是在马赛马拉巡逻的护林员，在安博塞利追踪象群的研究员，在Ol Pejeta守护犀牛的团队。" },
-          { title: "钱怎么流向保护区？", body: "每季度末，我们直接向合作机构转账，并在网站公开转账凭证。每位购买者都会在30天内收到一份捐款证明，注明他们的购买具体支持了哪个项目。" },
+          { title: "Why 10%?", body: "The industry standard is 1–2%. We chose 10% because we believe that's the number that creates real impact. This commitment is written into our articles of incorporation — it's not a marketing strategy, it's a legal obligation." },
+          { title: "How Do We Choose Partners?", body: "We only work with organizations operating directly in the field. Not large NGOs headquartered in New York, but rangers patrolling the Maasai Mara, researchers tracking elephant herds in Amboseli, and teams guarding rhinos on the ground. (Partners coming soon.)" },
+          { title: "How Does the Money Reach the Reserves?", body: "At the end of each quarter, we transfer funds directly to our partner organizations and publish the transfer receipts on our website. Every buyer receives a donation certificate within 30 days specifying exactly which project their purchase supported." },
         ].map(item => (
           <div key={item.title} style={{ marginBottom: 44 }}>
             <h3 style={{ fontFamily: "Georgia,serif", fontSize: 22, color: C.earth, marginBottom: 14 }}>{item.title}</h3>
@@ -334,21 +332,18 @@ function MissionPage({ setPage }) {
         ))}
       </div>
 
-      {/* 合作伙伴 */}
+      {/* Conservation Partners */}
       <div style={{ background: C.white, padding: "64px 48px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: C.earthLight, display: "block", marginBottom: 14 }}>合作保护机构</span>
-          <h2 style={{ fontFamily: "Georgia,serif", fontSize: 32, color: C.earth, marginBottom: 40 }}>我们的一线伙伴</h2>
+          <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: C.earthLight, display: "block", marginBottom: 14 }}>Conservation Partners</span>
+          <h2 style={{ fontFamily: "Georgia,serif", fontSize: 32, color: C.earth, marginBottom: 40 }}>Our Frontline Partners</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
             {[
-              { name: "马赛马拉信托", country: "🇰🇪 肯尼亚", desc: "守护东非最重要的狮群栖息地" },
-              { name: "安博塞利大象信托", country: "🇰🇪 肯尼亚", desc: "全球时间最长的大象行为研究项目" },
-              { name: "拯救犀牛国际", country: "🇿🇦 南非", desc: "为濒危犀牛提供紧急保护与繁育支持" },
-              { name: "雪豹信托基金", country: "🇨🇳 中国/蒙古", desc: "喜马拉雅与阿尔泰山脉的雪豹守护者" },
-              { name: "国际鲸豚保护组织", country: "🌏 全球", desc: "海洋哺乳动物的研究与保护" },
-              { name: "菲律宾鹰基金会", country: "🇵🇭 菲律宾", desc: "守护世界上最大也最稀有的鹰类" },
-            ].map(p => (
-              <div key={p.name} style={{ background: C.cream, borderRadius: 4, padding: 24, borderLeft: `3px solid ${C.earthLight}` }}>
+              { name: "Partner Organization", country: "—", desc: "Coming soon — we are building our conservation partnerships." },
+              { name: "Partner Organization", country: "—", desc: "Coming soon — we are building our conservation partnerships." },
+              { name: "Partner Organization", country: "—", desc: "Coming soon — we are building our conservation partnerships." },
+            ].map((p, i) => (
+              <div key={i} style={{ background: C.cream, borderRadius: 4, padding: 24, borderLeft: `3px solid ${C.earthLight}` }}>
                 <div style={{ fontSize: 12, color: C.muted, marginBottom: 6 }}>{p.country}</div>
                 <div style={{ fontFamily: "Georgia,serif", fontSize: 17, color: C.earth, marginBottom: 8 }}>{p.name}</div>
                 <div style={{ fontSize: 13, color: C.muted, lineHeight: 1.6 }}>{p.desc}</div>
@@ -358,14 +353,14 @@ function MissionPage({ setPage }) {
         </div>
       </div>
 
-      {/* 透明度 */}
+      {/* Transparency */}
       <div style={{ padding: "64px 48px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: C.earthLight, display: "block", marginBottom: 14 }}>资金透明</span>
-          <h2 style={{ fontFamily: "Georgia,serif", fontSize: 32, color: C.earth, marginBottom: 40 }}>每一分钱去哪儿了</h2>
+          <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: C.earthLight, display: "block", marginBottom: 14 }}>Fund Transparency</span>
+          <h2 style={{ fontFamily: "Georgia,serif", fontSize: 32, color: C.earth, marginBottom: 40 }}>Where Every Dollar Goes</h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }}>
             <div>
-              {[["野生动物保护","10%",C.earthLight],["生产与原材料","55%",C.sand],["运营与物流","20%","#8a9e87"],["营销与增长","10%","#b5c4b3"],["团队与管理","5%","#ccd8cb"]].map(([label,pct,color]) => (
+              {[["Wildlife Conservation","10%",C.earthLight],["Production & Materials","55%",C.sand],["Operations & Logistics","20%","#8a9e87"],["Marketing & Growth","10%","#b5c4b3"],["Team & Management","5%","#ccd8cb"]].map(([label,pct,color]) => (
                 <div key={label} style={{ marginBottom: 20 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", fontSize: 13, marginBottom: 7 }}>
                     <span style={{ color: C.text, fontWeight: 500 }}>{label}</span>
@@ -379,8 +374,8 @@ function MissionPage({ setPage }) {
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {[
-                { title: "2024年度报告", body: "包含全部捐款凭证及6家合作机构的资金使用报告，由GreenCert International审计。", link: "下载PDF ↗" },
-                { title: "捐款证明", body: "每次购买后30天内，你会收到一份写明具体保护项目的捐款证明。", link: "查看示例 ↗" },
+                { title: "2024 Annual Report", body: "Includes all donation receipts and fund-use reports from our conservation partners, audited by GreenCert International.", link: "Download PDF ↗" },
+                { title: "Donation Certificate", body: "Within 30 days of purchase, you'll receive a certificate naming the specific conservation project your order supported.", link: "View Sample ↗" },
               ].map(item => (
                 <div key={item.title} style={{ background: C.white, borderRadius: 4, padding: 24, borderLeft: `3px solid ${C.earthLight}` }}>
                   <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: C.earth, marginBottom: 10 }}>{item.title}</div>
@@ -396,7 +391,7 @@ function MissionPage({ setPage }) {
   );
 }
 
-// ─── 故事页 ───────────────────────────────────────────────────────────────────
+// ─── Stories Page ─────────────────────────────────────────────────────────────
 
 function StoriesPage() {
   const [selected, setSelected] = useState(null);
@@ -406,7 +401,7 @@ function StoriesPage() {
       <div style={{ paddingTop: 80, background: C.cream, minHeight: "100vh" }}>
         <div style={{ background: C.dark, padding: "60px 48px" }}>
           <div style={{ maxWidth: 800, margin: "0 auto" }}>
-            <button onClick={() => setSelected(null)} style={{ background: "none", border: "none", color: "rgba(200,169,110,0.5)", cursor: "pointer", fontSize: 13, fontFamily: "inherit", marginBottom: 28, padding: 0 }}>← 返回故事列表</button>
+            <button onClick={() => setSelected(null)} style={{ background: "none", border: "none", color: "rgba(200,169,110,0.5)", cursor: "pointer", fontSize: 13, fontFamily: "inherit", marginBottom: 28, padding: 0 }}>← Back to Stories</button>
             <div style={{ fontSize: 72, marginBottom: 20 }}>{s.emoji}</div>
             <div style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: C.sand, marginBottom: 14 }}>{s.tag}</div>
             <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(28px,3.5vw,48px)", color: C.sandLight, lineHeight: 1.1 }}>{s.title}</h1>
@@ -414,11 +409,11 @@ function StoriesPage() {
         </div>
         <div style={{ maxWidth: 700, margin: "0 auto", padding: "60px 48px" }}>
           {s.full.split("\n\n").map((para, i) => (
-            <p key={i} style={{ fontSize: 16, lineHeight: 1.85, color: C.muted, marginBottom: 24, fontFamily: i === 0 ? "Georgia,serif" : "inherit", fontSize: i === 0 ? 18 : 16, color: i === 0 ? C.text : C.muted }}>{para}</p>
+            <p key={i} style={{ fontSize: i === 0 ? 18 : 16, lineHeight: 1.85, color: i === 0 ? C.text : C.muted, marginBottom: 24, fontFamily: i === 0 ? "Georgia,serif" : "inherit" }}>{para}</p>
           ))}
           <div style={{ marginTop: 48, padding: "28px", background: C.white, borderRadius: 4, borderLeft: `3px solid ${C.sand}` }}>
-            <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.1em", color: C.earthLight, marginBottom: 8 }}>支持这个物种</div>
-            <p style={{ fontSize: 14, color: C.muted, lineHeight: 1.65 }}>购买对应系列产品，{s.emoji}的捐款将直接支持此保护项目。</p>
+            <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.1em", color: C.earthLight, marginBottom: 8 }}>Support This Species</div>
+            <p style={{ fontSize: 14, color: C.muted, lineHeight: 1.65 }}>Purchase the corresponding series and {s.emoji}'s donation will go directly to this conservation project.</p>
           </div>
         </div>
       </div>
@@ -428,9 +423,9 @@ function StoriesPage() {
     <div style={{ paddingTop: 80, background: C.dark, minHeight: "100vh" }}>
       <div style={{ padding: "72px 48px 56px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(200,169,110,0.45)", display: "block", marginBottom: 18 }}>野生故事</span>
-          <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(32px,4.5vw,58px)", color: C.sandLight, lineHeight: 1.1, marginBottom: 16, maxWidth: 540 }}>你在守护的<em style={{ color: C.sand }}>生命</em></h1>
-          <p style={{ fontSize: 15, color: "rgba(253,250,245,0.45)", maxWidth: 460, lineHeight: 1.75 }}>每个动物都有名字，每片栖息地都有故事。认识那些你正在帮助的生命。</p>
+          <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(200,169,110,0.45)", display: "block", marginBottom: 18 }}>Wild Stories</span>
+          <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(32px,4.5vw,58px)", color: C.sandLight, lineHeight: 1.1, marginBottom: 16, maxWidth: 540 }}>The Lives You're <em style={{ color: C.sand }}>Protecting</em></h1>
+          <p style={{ fontSize: 15, color: "rgba(253,250,245,0.45)", maxWidth: 460, lineHeight: 1.75 }}>Every animal has a name, every habitat has a story. Meet the lives you're helping.</p>
         </div>
       </div>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 48px 80px", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "rgba(200,169,110,0.07)" }}>
@@ -442,7 +437,7 @@ function StoriesPage() {
             <div style={{ fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: C.sand, marginBottom: 10 }}>{s.tag}</div>
             <div style={{ fontFamily: "Georgia,serif", fontSize: 20, color: C.sandLight, marginBottom: 14 }}>{s.title}</div>
             <div style={{ fontSize: 14, lineHeight: 1.7, color: "rgba(253,250,245,0.4)", marginBottom: 20 }}>{s.summary}</div>
-            <span style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: C.sand }}>阅读全文 →</span>
+            <span style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: C.sand }}>Read More →</span>
           </div>
         ))}
       </div>
@@ -450,26 +445,26 @@ function StoriesPage() {
   );
 }
 
-// ─── 关于我们页 ───────────────────────────────────────────────────────────────
+// ─── About Page ───────────────────────────────────────────────────────────────
 
 function AboutPage({ setPage }) {
   return (
     <div style={{ paddingTop: 80, background: C.cream, minHeight: "100vh" }}>
       <div style={{ background: C.earth, padding: "72px 48px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
-          <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(200,169,110,0.5)", display: "block", marginBottom: 18 }}>关于我们</span>
-          <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(32px,4.5vw,56px)", color: C.sandLight, lineHeight: 1.1, marginBottom: 20 }}>我们相信，<br /><em style={{ color: C.sand }}>消费可以是一种保护</em></h1>
-          <p style={{ fontSize: 16, color: "rgba(200,169,110,0.55)", maxWidth: 500, margin: "0 auto", lineHeight: 1.75 }}>Wild守护由一群热爱自然的设计师和保护主义者创立于2022年。</p>
+          <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(200,169,110,0.5)", display: "block", marginBottom: 18 }}>About Us</span>
+          <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(32px,4.5vw,56px)", color: C.sandLight, lineHeight: 1.1, marginBottom: 20 }}>We believe<br /><em style={{ color: C.sand }}>consumption can be conservation</em></h1>
+          <p style={{ fontSize: 16, color: "rgba(200,169,110,0.55)", maxWidth: 500, margin: "0 auto", lineHeight: 1.75 }}>CK Safari Culture Goods was founded in 2022 by a group of designers and conservationists passionate about nature.</p>
         </div>
       </div>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "72px 48px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }}>
           <div>
-            <h2 style={{ fontFamily: "Georgia,serif", fontSize: 28, color: C.earth, marginBottom: 20 }}>我们的价值观</h2>
+            <h2 style={{ fontFamily: "Georgia,serif", fontSize: 28, color: C.earth, marginBottom: 20 }}>Our Values</h2>
             {[
-              { icon: "🌿", title: "真实影响", body: "每笔捐款都有凭证，每个项目都可追溯。我们拒绝模糊的'支持环保'承诺。" },
-              { icon: "🤝", title: "一线合作", body: "我们绕过中间环节，直接与野外保护机构合作，确保资金真正到达需要的地方。" },
-              { icon: "🎨", title: "美学驱动", body: "我们相信美丽的产品能带来更大的影响力。设计和目的，从不妥协。" },
+              { icon: "🌿", title: "Real Impact", body: "Every donation has a receipt, every project is traceable. We refuse vague 'support for the environment' commitments." },
+              { icon: "🤝", title: "Frontline Partnerships", body: "We bypass intermediaries and work directly with field conservation organizations, ensuring funds reach where they're truly needed." },
+              { icon: "🎨", title: "Aesthetics-Driven", body: "We believe beautiful products create greater impact. Design and purpose — we never compromise on either." },
             ].map(v => (
               <div key={v.title} style={{ display: "flex", gap: 18, marginBottom: 28 }}>
                 <span style={{ fontSize: 28, flexShrink: 0 }}>{v.icon}</span>
@@ -481,18 +476,18 @@ function AboutPage({ setPage }) {
             ))}
           </div>
           <div>
-            <h2 style={{ fontFamily: "Georgia,serif", fontSize: 28, color: C.earth, marginBottom: 20 }}>联系我们</h2>
+            <h2 style={{ fontFamily: "Georgia,serif", fontSize: 28, color: C.earth, marginBottom: 20 }}>Contact Us</h2>
             <div style={{ background: C.white, borderRadius: 4, padding: 28 }}>
-              {[["合作与媒体", "hello@wildguard.cn"],["客户服务", "support@wildguard.cn"],["捐款相关", "impact@wildguard.cn"]].map(([label, email]) => (
+              {[["Partnerships & Media", "hello@cksafari.com"],["Customer Service", "support@cksafari.com"],["Donation Inquiries", "impact@cksafari.com"]].map(([label, email]) => (
                 <div key={label} style={{ marginBottom: 20, paddingBottom: 20, borderBottom: "1px solid rgba(44,58,46,0.08)" }}>
                   <div style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: C.earthLight, marginBottom: 5 }}>{label}</div>
                   <div style={{ fontSize: 15, color: C.earth }}>{email}</div>
                 </div>
               ))}
               <div style={{ marginTop: 4 }}>
-                <div style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: C.earthLight, marginBottom: 8 }}>社交媒体</div>
+                <div style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: C.earthLight, marginBottom: 8 }}>Social Media</div>
                 <div style={{ display: "flex", gap: 10 }}>
-                  {["微博", "微信", "小红书", "Instagram"].map(s => (
+                  {["Instagram", "Facebook", "TikTok", "X"].map(s => (
                     <span key={s} style={{ fontSize: 12, padding: "5px 12px", border: `1px solid rgba(44,58,46,0.15)`, borderRadius: 2, color: C.muted }}>{s}</span>
                   ))}
                 </div>
@@ -502,20 +497,20 @@ function AboutPage({ setPage }) {
         </div>
       </div>
 
-      {/* Email 订阅 */}
+      {/* Email Subscription */}
       <div style={{ background: C.earth, padding: "64px 48px", textAlign: "center" }}>
-        <h2 style={{ fontFamily: "Georgia,serif", fontSize: 34, color: C.sandLight, marginBottom: 12 }}>加入野生守护者</h2>
-        <p style={{ fontSize: 15, color: "rgba(200,169,110,0.55)", marginBottom: 32 }}>野生动物动态、新品发布、影响力报告——每月一次。</p>
+        <h2 style={{ fontFamily: "Georgia,serif", fontSize: 34, color: C.sandLight, marginBottom: 12 }}>Join the Wild Guardians</h2>
+        <p style={{ fontSize: 15, color: "rgba(200,169,110,0.55)", marginBottom: 32 }}>Wildlife updates, new product launches, and impact reports — once a month.</p>
         <div style={{ display: "flex", gap: 0, maxWidth: 420, margin: "0 auto", border: "1px solid rgba(200,169,110,0.25)", borderRadius: 2, overflow: "hidden" }}>
           <input type="email" placeholder="your@email.com" style={{ flex: 1, padding: "14px 18px", background: "rgba(255,255,255,0.05)", border: "none", outline: "none", color: C.sandLight, fontSize: 14, fontFamily: "inherit" }} />
-          <button style={{ background: C.sand, color: C.dark, padding: "14px 22px", border: "none", cursor: "pointer", fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", fontFamily: "inherit" }}>订阅</button>
+          <button style={{ background: C.sand, color: C.dark, padding: "14px 22px", border: "none", cursor: "pointer", fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", fontFamily: "inherit" }}>Subscribe</button>
         </div>
       </div>
     </div>
   );
 }
 
-// ─── APP ROOT ─────────────────────────────────────────────────────────────────
+// ─── App Root ─────────────────────────────────────────────────────────────────
 
 export default function App() {
   const [page, setPage] = useState("home");
@@ -534,7 +529,7 @@ export default function App() {
   };
 
   return (
-    <div style={{ background: C.cream, fontFamily: "'DM Sans', 'PingFang SC', sans-serif" }}>
+    <div style={{ background: C.cream, fontFamily: "'DM Sans', sans-serif" }}>
       <Nav page={page} setPage={setPage} />
       {renderPage()}
       <Footer setPage={setPage} />
