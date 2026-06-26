@@ -468,7 +468,7 @@ function HomePage({ setPage, lang }) {
           <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(26px,3vw,40px)", color: C.earth, lineHeight: 1.15 }}>{t.featuredHeading1}<br />{t.featuredHeading2}</h2>
           <button onClick={() => setPage("shop")} style={{ background: "none", border: `1px solid ${C.earth}`, color: C.earth, padding: "10px 24px", borderRadius: 2, fontSize: 12, cursor: "pointer", fontFamily: "inherit", letterSpacing: "0.06em" }}>{t.featuredViewAll}</button>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 24 }}>
           {PRODUCTS.slice(0, 3).map(p => <ProductCard key={p.id} p={p} lang={lang} />)}
         </div>
       </div>
@@ -515,7 +515,7 @@ function ProductCard({ p, lang }) {
         transition: "transform 0.25s, box-shadow 0.25s", cursor: "pointer",
       }}
     >
-      <div style={{ height: 240, background: p.bg, position: "relative", overflow: "hidden" }}>
+      <div style={{ height: "clamp(180px, 55vw, 240px)", background: p.bg, position: "relative", overflow: "hidden" }}>
         <img src={p.image} alt={name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
         <span style={{ position: "absolute", top: 14, left: 14, background: C.earth, color: C.sandLight, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", padding: "5px 12px", borderRadius: 2 }}>{series}</span>
       </div>
@@ -555,7 +555,7 @@ function ShopPage({ lang }) {
             }}>{filterLabel(f)}</button>
           ))}
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 24 }}>
           {filtered.map(p => <ProductCard key={p.id} p={p} lang={lang} />)}
         </div>
       </div>
