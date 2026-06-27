@@ -318,9 +318,22 @@ function pick(lang, en, zh, tw) {
   return en;
 }
 
+// ─── Responsive Hook ──────────────────────────────────────────────────────────
+
+function useIsMobile() {
+  const [mobile, setMobile] = useState(window.innerWidth < 768);
+  useEffect(() => {
+    const handler = () => setMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+  return mobile;
+}
+
 // ─── Shared Components ────────────────────────────────────────────────────────
 
 function Nav({ page, setPage, lang, setLang }) {
+  const isMobile = useIsMobile();
   const t = T[lang];
   const links = [
     { label: t.navShop, key: "shop" },
@@ -328,6 +341,46 @@ function Nav({ page, setPage, lang, setLang }) {
     { label: t.navStories, key: "stories" },
     { label: t.navAbout, key: "about" },
   ];
+  const langToggle = (
+    <div style={{ display: "flex", borderRadius: 2, overflow: "hidden", border: "1px solid rgba(200,169,110,0.3)" }}>
+      {[["en", "EN"], ["zh", "简体"], ["tw", "繁體"]].map(([code, label]) => (
+        <button key={code} onClick={() => setLang(code)} style={{
+          background: lang === code ? C.sand : "transparent",
+          color: lang === code ? C.dark : "rgba(200,169,110,0.6)",
+          border: "none", cursor: "pointer", padding: "6px 10px",
+          fontSize: 11, fontWeight: 600, letterSpacing: "0.04em", fontFamily: "inherit",
+        }}>{label}</button>
+      ))}
+    </div>
+  );
+  if (isMobile) {
+    return (
+      <nav style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
+        display: "flex", flexDirection: "column", gap: 10,
+        padding: "12px 16px",
+        background: "rgba(26,35,25,0.97)", backdropFilter: "blur(10px)",
+        borderBottom: "1px solid rgba(200,169,110,0.08)",
+      }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <img src={rangerLabel} alt="CK Safari Culture Goods" onClick={() => setPage("home")}
+            style={{ height: 36, cursor: "pointer", display: "block" }} />
+          {langToggle}
+        </div>
+        <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center" }}>
+          {links.map(l => (
+            <button key={l.key} onClick={() => setPage(l.key)} style={{
+              background: "none", border: "none", cursor: "pointer",
+              color: page === l.key ? C.sand : "rgba(232,213,168,0.55)",
+              fontSize: 12, letterSpacing: "0.06em", fontFamily: "inherit",
+              borderBottom: page === l.key ? `1px solid ${C.sand}` : "1px solid transparent",
+              paddingBottom: 2, transition: "color 0.2s",
+            }}>{l.label}</button>
+          ))}
+        </div>
+      </nav>
+    );
+  }
   return (
     <nav style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
@@ -349,29 +402,29 @@ function Nav({ page, setPage, lang, setLang }) {
           }}>{l.label}</button>
         ))}
       </div>
-      <div style={{ display: "flex", borderRadius: 2, overflow: "hidden", border: "1px solid rgba(200,169,110,0.3)" }}>
-        {[["en", "EN"], ["zh", "简体"], ["tw", "繁體"]].map(([code, label]) => (
-          <button key={code} onClick={() => setLang(code)} style={{
-            background: lang === code ? C.sand : "transparent",
-            color: lang === code ? C.dark : "rgba(200,169,110,0.6)",
-            border: "none", cursor: "pointer", padding: "6px 11px",
-            fontSize: 11, fontWeight: 600, letterSpacing: "0.04em", fontFamily: "inherit",
-          }}>{label}</button>
-        ))}
-      </div>
+      {langToggle}
     </nav>
   );
 }
 
 function Footer({ setPage, lang }) {
+  const isMobile = useIsMobile();
   const t = T[lang];
   return (
-    <footer style={{ background: C.dark, padding: "48px 48px 0" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, maxWidth: 1100, margin: "0 auto" }}>
-        <div>
-          <img src={rangerLabel} alt="CK Safari Culture Goods" style={{ height: 52, display: "block", marginBottom: 12 }} />
-          <p style={{ fontSize: 13, color: "rgba(200,169,110,0.4)", lineHeight: 1.7, maxWidth: 220 }}>{t.footerTagline}</p>
+    <footer style={{ background: C.dark, padding: isMobile ? "32px 16px 0" : "48px 48px 0" }}>
+      {isMobile && (
+        <div style={{ marginBottom: 28 }}>
+          <img src={rangerLabel} alt="CK Safari Culture Goods" style={{ height: 44, display: "block", marginBottom: 10 }} />
+          <p style={{ fontSize: 13, color: "rgba(200,169,110,0.4)", lineHeight: 1.7 }}>{t.footerTagline}</p>
         </div>
+      )}
+      <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "2fr 1fr 1fr 1fr", gap: isMobile ? 24 : 48, maxWidth: 1100, margin: "0 auto" }}>
+        {!isMobile && (
+          <div>
+            <img src={rangerLabel} alt="CK Safari Culture Goods" style={{ height: 52, display: "block", marginBottom: 12 }} />
+            <p style={{ fontSize: 13, color: "rgba(200,169,110,0.4)", lineHeight: 1.7, maxWidth: 220 }}>{t.footerTagline}</p>
+          </div>
+        )}
         {t.footerCols.map(col => (
           <div key={col.title}>
             <div style={{ fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(200,169,110,0.35)", marginBottom: 16 }}>{col.title}</div>
@@ -388,7 +441,10 @@ function Footer({ setPage, lang }) {
       <div style={{
         maxWidth: 1100, margin: "40px auto 0",
         borderTop: "1px solid rgba(200,169,110,0.08)",
-        padding: "20px 0", display: "flex", justifyContent: "space-between",
+        padding: "20px 0", display: "flex",
+        flexDirection: isMobile ? "column" : "row",
+        gap: isMobile ? 6 : 0,
+        justifyContent: "space-between",
       }}>
         <span style={{ fontSize: 12, color: "rgba(200,169,110,0.2)" }}>{t.footerCopy}</span>
         <span style={{ fontSize: 12, color: "rgba(200,169,110,0.2)" }}>{t.footerBadge}</span>
@@ -399,7 +455,8 @@ function Footer({ setPage, lang }) {
 
 // ─── Home Page ────────────────────────────────────────────────────────────────
 
-function HomePage({ setPage, lang }) {
+function HomePage({ setPage, lang, onProductClick }) {
+  const isMobile = useIsMobile();
   const t = T[lang];
   return (
     <div>
@@ -422,7 +479,7 @@ function HomePage({ setPage, lang }) {
             {t.heroHeading1}<br /><em style={{ color: C.sand, fontStyle: "italic" }}>{t.heroHeading2}</em>
           </h1>
           <p style={{ fontSize: 16, color: "rgba(253,250,245,0.55)", maxWidth: 400, margin: "0 auto 44px", lineHeight: 1.75, fontWeight: 300 }}>{t.heroBody}</p>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center" }}>
+          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <button onClick={() => setPage("shop")} style={{ background: C.sand, color: C.dark, padding: "15px 36px", border: "none", borderRadius: 2, fontSize: 13, fontWeight: 600, letterSpacing: "0.08em", cursor: "pointer", fontFamily: "inherit" }}>{t.heroCta}</button>
             <button onClick={() => setPage("mission")} style={{ border: `1px solid rgba(232,213,168,0.35)`, color: C.sandLight, padding: "15px 36px", background: "none", borderRadius: 2, fontSize: 13, letterSpacing: "0.08em", cursor: "pointer", fontFamily: "inherit" }}>{t.heroCta2}</button>
           </div>
@@ -430,28 +487,28 @@ function HomePage({ setPage, lang }) {
       </div>
 
       {/* Stats Bar */}
-      <div style={{ background: C.earth, padding: "30px 48px", display: "flex", justifyContent: "center", gap: 72, flexWrap: "wrap" }}>
+      <div style={{ background: C.earth, padding: isMobile ? "24px 16px" : "30px 48px", display: "flex", justifyContent: "center", gap: isMobile ? 28 : 72, flexWrap: "wrap" }}>
         {[["10%", t.statDonated], ["1,247", t.statAnimals], ["6", t.statReserves], ["12", t.statCountries]].map(([num, label]) => (
           <div key={label} style={{ textAlign: "center" }}>
-            <span style={{ fontFamily: "Georgia,serif", fontSize: 34, color: C.sand, display: "block", lineHeight: 1 }}>{num}</span>
+            <span style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? 28 : 34, color: C.sand, display: "block", lineHeight: 1 }}>{num}</span>
             <span style={{ fontSize: 11, color: "rgba(200,169,110,0.55)", letterSpacing: "0.12em", textTransform: "uppercase", marginTop: 5, display: "block" }}>{label}</span>
           </div>
         ))}
       </div>
 
       {/* Mission Preview */}
-      <div style={{ background: `linear-gradient(to right, ${C.earth} 50%, ${C.white} 50%)` }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: 460 }}>
+      <div style={{ background: isMobile ? C.earth : `linear-gradient(to right, ${C.earth} 50%, ${C.white} 50%)` }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", minHeight: isMobile ? undefined : 460 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden" }}>
             <div style={{ position: "absolute", fontSize: 260, opacity: 0.07, color: C.sand, userSelect: "none" }}>🐘</div>
-            <div style={{ position: "relative", textAlign: "center", padding: 48 }}>
-              <span style={{ fontFamily: "Georgia,serif", fontSize: 80, color: C.sand, display: "block", lineHeight: 1 }}>10%</span>
+            <div style={{ position: "relative", textAlign: "center", padding: isMobile ? "40px 24px" : 48 }}>
+              <span style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? 64 : 80, color: C.sand, display: "block", lineHeight: 1 }}>10%</span>
               <div style={{ fontSize: 13, color: "rgba(200,169,110,0.65)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 14, lineHeight: 1.6 }}>
                 {t.missionPreviewSub.split("\n").map((line, i) => <span key={i} style={{ display: "block" }}>{line}</span>)}
               </div>
             </div>
           </div>
-          <div style={{ padding: "64px 60px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <div style={{ padding: isMobile ? "32px 24px 48px" : "64px 60px", background: isMobile ? C.white : "transparent", display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: C.earthLight, marginBottom: 16 }}>{t.missionSectionLabel}</span>
             <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(22px,2.5vw,34px)", color: C.earth, lineHeight: 1.2, marginBottom: 20, maxWidth: 420 }}>{t.missionPreviewHeading}</h2>
             <blockquote style={{ borderLeft: `3px solid ${C.sand}`, paddingLeft: 20, margin: "24px 0", fontFamily: "Georgia,serif", fontSize: 16, color: C.earth, lineHeight: 1.65, fontStyle: "italic" }}>{t.missionPreviewQuote}</blockquote>
@@ -462,26 +519,26 @@ function HomePage({ setPage, lang }) {
       </div>
 
       {/* Product Preview */}
-      <div style={{ padding: "80px 48px", maxWidth: 1100, margin: "0 auto" }}>
+      <div style={{ padding: isMobile ? "48px 16px" : "80px 48px", maxWidth: 1100, margin: "0 auto" }}>
         <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: C.earthLight, marginBottom: 14, display: "block" }}>{t.featuredLabel}</span>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 40 }}>
+        <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "flex-end", gap: isMobile ? 12 : 0, marginBottom: 40 }}>
           <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(26px,3vw,40px)", color: C.earth, lineHeight: 1.15 }}>{t.featuredHeading1}<br />{t.featuredHeading2}</h2>
           <button onClick={() => setPage("shop")} style={{ background: "none", border: `1px solid ${C.earth}`, color: C.earth, padding: "10px 24px", borderRadius: 2, fontSize: 12, cursor: "pointer", fontFamily: "inherit", letterSpacing: "0.06em" }}>{t.featuredViewAll}</button>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 24 }}>
-          {PRODUCTS.slice(0, 3).map(p => <ProductCard key={p.id} p={p} lang={lang} />)}
+          {PRODUCTS.slice(0, 3).map(p => <ProductCard key={p.id} p={p} lang={lang} onClick={onProductClick} />)}
         </div>
       </div>
 
       {/* Stories Preview */}
       <div style={{ background: C.dark }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "80px 48px" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: isMobile ? "48px 16px" : "80px 48px" }}>
           <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(200,169,110,0.45)", marginBottom: 14, display: "block" }}>{t.storiesLabel}</span>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 40 }}>
+          <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "flex-end", gap: isMobile ? 12 : 0, marginBottom: 40 }}>
             <h2 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(26px,3vw,40px)", color: C.sandLight, lineHeight: 1.15 }}>{t.storiesHeading}</h2>
             <button onClick={() => setPage("stories")} style={{ background: "none", border: `1px solid rgba(200,169,110,0.3)`, color: C.sand, padding: "10px 24px", borderRadius: 2, fontSize: 12, cursor: "pointer", fontFamily: "inherit" }}>{t.storiesMore}</button>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "rgba(200,169,110,0.08)", border: "1px solid rgba(200,169,110,0.08)" }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 1, background: "rgba(200,169,110,0.08)", border: "1px solid rgba(200,169,110,0.08)" }}>
             {STORIES.map(s => (
               <div key={s.id} style={{ background: C.dark, padding: "32px 26px" }}>
                 <span style={{ fontSize: 44, display: "block", marginBottom: 18 }}>{s.emoji}</span>
@@ -499,7 +556,7 @@ function HomePage({ setPage, lang }) {
 
 // ─── Product Card ─────────────────────────────────────────────────────────────
 
-function ProductCard({ p, lang }) {
+function ProductCard({ p, lang, onClick }) {
   const [hover, setHover] = useState(false);
   const name = pick(lang, p.nameEn, p.nameZh, p.nameTw);
   const animal = pick(lang, p.animal, p.animalZh, p.animalTw);
@@ -508,6 +565,7 @@ function ProductCard({ p, lang }) {
     <div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      onClick={onClick ? () => onClick(p) : undefined}
       style={{
         background: C.white, border: `1px solid rgba(44,58,46,0.08)`, borderRadius: 4, overflow: "hidden",
         transform: hover ? "translateY(-5px)" : "none",
@@ -527,24 +585,81 @@ function ProductCard({ p, lang }) {
   );
 }
 
+// ─── Product Detail Page ──────────────────────────────────────────────────────
+
+function ProductDetailPage({ product, lang, onBack }) {
+  const isMobile = useIsMobile();
+  const p = product;
+  const name = pick(lang, p.nameEn, p.nameZh, p.nameTw);
+  const animal = pick(lang, p.animal, p.animalZh, p.animalTw);
+  const desc = pick(lang, p.descEn, p.descZh, p.descTw);
+  const series = lang !== "en" ? (SERIES_LABEL[lang]?.[p.series] ?? p.series) : p.series;
+  const backLabel = lang === "en" ? "← Back to Shop" : lang === "zh" ? "← 返回商店" : "← 返回商店";
+  return (
+    <div style={{ paddingTop: isMobile ? 110 : 80, background: C.cream, minHeight: "100vh" }}>
+      <div style={{ background: C.dark, padding: isMobile ? "32px 16px" : "48px 48px" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(200,169,110,0.55)", cursor: "pointer", fontSize: 13, fontFamily: "inherit", marginBottom: 24, padding: 0, letterSpacing: "0.04em" }}>{backLabel}</button>
+          <span style={{ display: "inline-block", background: C.earth, color: C.sandLight, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", padding: "5px 12px", borderRadius: 2, marginBottom: 16 }}>{series}</span>
+          <div style={{ fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: C.earthLight, marginBottom: 12 }}>{animal}</div>
+          <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(28px,4vw,44px)", color: C.sandLight, lineHeight: 1.1 }}>{name}</h1>
+        </div>
+      </div>
+      <div style={{ padding: isMobile ? "32px 16px 64px" : "64px 48px", maxWidth: 1100, margin: "0 auto" }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 32 : 64 }}>
+          <div style={{ borderRadius: 4, overflow: "hidden", background: p.bg, height: isMobile ? 260 : 460 }}>
+            {p.image
+              ? <img src={p.image} alt={name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              : <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 120 }}>{p.emoji ?? "🦁"}</div>
+            }
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: 20 }}>
+            <div>
+              <span style={{ display: "inline-block", background: C.earth, color: C.sandLight, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", padding: "5px 12px", borderRadius: 2, marginBottom: 12 }}>{series}</span>
+              <div style={{ fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: C.earthLight, marginBottom: 8 }}>{animal}</div>
+              <h2 style={{ fontFamily: "Georgia,serif", fontSize: 28, color: C.earth, lineHeight: 1.15 }}>{name}</h2>
+            </div>
+            <div style={{ paddingTop: 8, borderTop: `1px solid rgba(44,58,46,0.1)` }}>
+              <div style={{ fontSize: 13, color: C.muted, fontStyle: "italic", marginBottom: 4 }}>
+                {lang === "en" ? "Price coming soon" : lang === "zh" ? "价格即将公布" : "價格即將公布"}
+              </div>
+            </div>
+            {desc && (
+              <p style={{ fontSize: 15, lineHeight: 1.8, color: C.muted }}>{desc}</p>
+            )}
+            <div style={{ padding: "16px 20px", background: C.white, borderRadius: 4, borderLeft: `3px solid ${C.sand}`, fontSize: 13, color: C.earthLight, lineHeight: 1.6 }}>
+              {lang === "en"
+                ? "10% of this product's sale price goes directly to wildlife conservation through Habitat Watcher."
+                : lang === "zh"
+                ? "该产品售价的10%直接通过Habitat Watcher用于野生动物保护。"
+                : "該產品售價的10%直接通過Habitat Watcher用於野生動物保護。"}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── Shop Page ────────────────────────────────────────────────────────────────
 
-function ShopPage({ lang }) {
+function ShopPage({ lang, onProductClick }) {
+  const isMobile = useIsMobile();
   const t = T[lang];
   const [filter, setFilter] = useState("All");
   const filters = ["All", "Lion Series", "Eagle Series", "Ranger Collection", "Safari Collection"];
   const filtered = filter === "All" ? PRODUCTS : PRODUCTS.filter(p => p.series === filter);
   const filterLabel = (f) => lang !== "en" ? (SERIES_LABEL[lang]?.[f] ?? f) : f;
   return (
-    <div style={{ paddingTop: 80, background: C.cream, minHeight: "100vh" }}>
-      <div style={{ background: C.earth, padding: "60px 48px 48px" }}>
+    <div style={{ paddingTop: isMobile ? 110 : 80, background: C.cream, minHeight: "100vh" }}>
+      <div style={{ background: C.earth, padding: isMobile ? "40px 16px 32px" : "60px 48px 48px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(200,169,110,0.5)", display: "block", marginBottom: 14 }}>{t.shopLabel}</span>
           <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(32px,4vw,52px)", color: C.sandLight, marginBottom: 12 }}>{t.shopHeading}</h1>
           <p style={{ fontSize: 15, color: "rgba(200,169,110,0.55)", maxWidth: 460, lineHeight: 1.7 }}>{t.shopBody}</p>
         </div>
       </div>
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "40px 48px" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: isMobile ? "32px 16px" : "40px 48px" }}>
         <div style={{ display: "flex", gap: 10, marginBottom: 40, flexWrap: "wrap" }}>
           {filters.map(f => (
             <button key={f} onClick={() => setFilter(f)} style={{
@@ -556,7 +671,7 @@ function ShopPage({ lang }) {
           ))}
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 24 }}>
-          {filtered.map(p => <ProductCard key={p.id} p={p} lang={lang} />)}
+          {filtered.map(p => <ProductCard key={p.id} p={p} lang={lang} onClick={onProductClick} />)}
         </div>
       </div>
     </div>
@@ -566,11 +681,12 @@ function ShopPage({ lang }) {
 // ─── Mission Page ─────────────────────────────────────────────────────────────
 
 function MissionPage({ setPage, lang }) {
+  const isMobile = useIsMobile();
   const t = T[lang];
   return (
-    <div style={{ paddingTop: 80, background: C.cream, minHeight: "100vh" }}>
+    <div style={{ paddingTop: isMobile ? 110 : 80, background: C.cream, minHeight: "100vh" }}>
       {/* Hero */}
-      <div style={{ background: C.dark, padding: "80px 48px" }}>
+      <div style={{ background: C.dark, padding: isMobile ? "48px 16px" : "80px 48px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
           <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(200,169,110,0.45)", display: "block", marginBottom: 20 }}>{t.missionLabel}</span>
           <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(34px,4.5vw,60px)", color: C.sandLight, lineHeight: 1.1, marginBottom: 24 }}>
@@ -581,9 +697,9 @@ function MissionPage({ setPage, lang }) {
       </div>
 
       {/* Story */}
-      <div style={{ maxWidth: 800, margin: "0 auto", padding: "80px 48px" }}>
+      <div style={{ maxWidth: 800, margin: "0 auto", padding: isMobile ? "48px 16px" : "80px 48px" }}>
         <div style={{ borderLeft: `3px solid ${C.sand}`, paddingLeft: 24, marginBottom: 48 }}>
-          <p style={{ fontFamily: "Georgia,serif", fontSize: 22, color: C.earth, lineHeight: 1.65, fontStyle: "italic" }}>{t.missionQuote}</p>
+          <p style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? 18 : 22, color: C.earth, lineHeight: 1.65, fontStyle: "italic" }}>{t.missionQuote}</p>
           <span style={{ fontSize: 13, color: C.muted, marginTop: 12, display: "block" }}>{t.missionFounder}</span>
         </div>
         {[
@@ -591,18 +707,18 @@ function MissionPage({ setPage, lang }) {
           { title: t.missionPartnersTitle, body: t.missionPartnersBody },
         ].map(item => (
           <div key={item.title} style={{ marginBottom: 44 }}>
-            <h3 style={{ fontFamily: "Georgia,serif", fontSize: 22, color: C.earth, marginBottom: 14 }}>{item.title}</h3>
+            <h3 style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? 20 : 22, color: C.earth, marginBottom: 14 }}>{item.title}</h3>
             <p style={{ fontSize: 15, lineHeight: 1.8, color: C.muted }}>{item.body}</p>
           </div>
         ))}
       </div>
 
       {/* Conservation Partners */}
-      <div style={{ background: C.white, padding: "64px 48px" }}>
+      <div style={{ background: C.white, padding: isMobile ? "40px 16px" : "64px 48px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: C.earthLight, display: "block", marginBottom: 14 }}>{t.missionPartnersLabel}</span>
-          <h2 style={{ fontFamily: "Georgia,serif", fontSize: 32, color: C.earth, marginBottom: 40 }}>{t.missionPartnersHeading}</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+          <h2 style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? 26 : 32, color: C.earth, marginBottom: 40 }}>{t.missionPartnersHeading}</h2>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 16 }}>
             <div style={{ background: C.cream, borderRadius: 4, padding: 24, borderLeft: `3px solid ${C.sand}` }}>
               <div style={{ fontSize: 12, color: C.sand, fontWeight: 600, marginBottom: 6, letterSpacing: "0.06em" }}>habitatwatcher.org</div>
               <div style={{ fontFamily: "Georgia,serif", fontSize: 17, color: C.earth, marginBottom: 8 }}>
@@ -627,10 +743,10 @@ function MissionPage({ setPage, lang }) {
       </div>
 
       {/* Revenue Allocation */}
-      <div style={{ padding: "64px 48px" }}>
+      <div style={{ padding: isMobile ? "40px 16px" : "64px 48px" }}>
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: C.earthLight, display: "block", marginBottom: 14 }}>{t.missionTransLabel}</span>
-          <h2 style={{ fontFamily: "Georgia,serif", fontSize: 32, color: C.earth, marginBottom: 40 }}>{t.missionTransHeading}</h2>
+          <h2 style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? 26 : 32, color: C.earth, marginBottom: 40 }}>{t.missionTransHeading}</h2>
           {[
             [t.missionFundLabels[0], "10%", C.earthLight],
             [t.missionFundLabels[1], "55%", C.sand],
@@ -657,22 +773,23 @@ function MissionPage({ setPage, lang }) {
 // ─── Stories Page ─────────────────────────────────────────────────────────────
 
 function StoriesPage({ lang }) {
+  const isMobile = useIsMobile();
   const t = T[lang];
   const [selected, setSelected] = useState(null);
   if (selected) {
     const s = STORIES.find(x => x.id === selected);
     const fullText = pick(lang, s.fullEn, s.fullZh, s.fullTw);
     return (
-      <div style={{ paddingTop: 80, background: C.cream, minHeight: "100vh" }}>
-        <div style={{ background: C.dark, padding: "60px 48px" }}>
+      <div style={{ paddingTop: isMobile ? 110 : 80, background: C.cream, minHeight: "100vh" }}>
+        <div style={{ background: C.dark, padding: isMobile ? "40px 16px" : "60px 48px" }}>
           <div style={{ maxWidth: 800, margin: "0 auto" }}>
             <button onClick={() => setSelected(null)} style={{ background: "none", border: "none", color: "rgba(200,169,110,0.5)", cursor: "pointer", fontSize: 13, fontFamily: "inherit", marginBottom: 28, padding: 0 }}>{t.storiesBack}</button>
-            <div style={{ fontSize: 72, marginBottom: 20 }}>{s.emoji}</div>
+            <div style={{ fontSize: isMobile ? 52 : 72, marginBottom: 20 }}>{s.emoji}</div>
             <div style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: C.sand, marginBottom: 14 }}>{pick(lang, s.tagEn, s.tagZh, s.tagTw)}</div>
             <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(28px,3.5vw,48px)", color: C.sandLight, lineHeight: 1.1 }}>{pick(lang, s.titleEn, s.titleZh, s.titleTw)}</h1>
           </div>
         </div>
-        <div style={{ maxWidth: 700, margin: "0 auto", padding: "60px 48px" }}>
+        <div style={{ maxWidth: 700, margin: "0 auto", padding: isMobile ? "40px 16px" : "60px 48px" }}>
           {fullText.split("\n\n").map((para, i) => (
             <p key={i} style={{ fontSize: i === 0 ? 18 : 16, lineHeight: 1.85, color: i === 0 ? C.text : C.muted, marginBottom: 24, fontFamily: i === 0 ? "Georgia,serif" : "inherit" }}>{para}</p>
           ))}
@@ -685,8 +802,8 @@ function StoriesPage({ lang }) {
     );
   }
   return (
-    <div style={{ paddingTop: 80, background: C.dark, minHeight: "100vh" }}>
-      <div style={{ padding: "72px 48px 56px" }}>
+    <div style={{ paddingTop: isMobile ? 110 : 80, background: C.dark, minHeight: "100vh" }}>
+      <div style={{ padding: isMobile ? "48px 16px 32px" : "72px 48px 56px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(200,169,110,0.45)", display: "block", marginBottom: 18 }}>{t.storiesPageLabel}</span>
           <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(32px,4.5vw,58px)", color: C.sandLight, lineHeight: 1.1, marginBottom: 16, maxWidth: 540 }}>
@@ -695,7 +812,7 @@ function StoriesPage({ lang }) {
           <p style={{ fontSize: 15, color: "rgba(253,250,245,0.45)", maxWidth: 460, lineHeight: 1.75 }}>{t.storiesPageBody}</p>
         </div>
       </div>
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 48px 80px", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "rgba(200,169,110,0.07)" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: isMobile ? "0 16px 48px" : "0 48px 80px", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 1, background: "rgba(200,169,110,0.07)" }}>
         {STORIES.map(s => (
           <div key={s.id} onClick={() => setSelected(s.id)}
             style={{ background: C.dark, padding: "36px 28px", cursor: "pointer", transition: "background 0.2s" }}
@@ -716,10 +833,11 @@ function StoriesPage({ lang }) {
 // ─── About Page ───────────────────────────────────────────────────────────────
 
 function AboutPage({ setPage, lang }) {
+  const isMobile = useIsMobile();
   const t = T[lang];
   return (
-    <div style={{ paddingTop: 80, background: C.cream, minHeight: "100vh" }}>
-      <div style={{ background: C.earth, padding: "72px 48px" }}>
+    <div style={{ paddingTop: isMobile ? 110 : 80, background: C.cream, minHeight: "100vh" }}>
+      <div style={{ background: C.earth, padding: isMobile ? "48px 16px" : "72px 48px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
           <span style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(200,169,110,0.5)", display: "block", marginBottom: 18 }}>{t.aboutLabel}</span>
           <h1 style={{ fontFamily: "Georgia,serif", fontSize: "clamp(32px,4.5vw,56px)", color: C.sandLight, lineHeight: 1.1, marginBottom: 20 }}>
@@ -728,8 +846,8 @@ function AboutPage({ setPage, lang }) {
           <p style={{ fontSize: 16, color: "rgba(200,169,110,0.55)", maxWidth: 500, margin: "0 auto", lineHeight: 1.75 }}>{t.aboutSubheading}</p>
         </div>
       </div>
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "72px 48px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: isMobile ? "48px 16px" : "72px 48px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 40 : 64 }}>
           <div>
             <h2 style={{ fontFamily: "Georgia,serif", fontSize: 28, color: C.earth, marginBottom: 20 }}>{t.aboutValuesHeading}</h2>
             {t.aboutValues.map(v => (
@@ -772,25 +890,31 @@ function AboutPage({ setPage, lang }) {
 export default function App() {
   const [page, setPage] = useState("home");
   const [lang, setLang] = useState("en");
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const navigate = (newPage) => { setSelectedProduct(null); setPage(newPage); };
 
   useEffect(() => { window.scrollTo(0, 0); }, [page]);
 
   const renderPage = () => {
+    if (selectedProduct !== null) {
+      return <ProductDetailPage product={selectedProduct} lang={lang} onBack={() => setSelectedProduct(null)} />;
+    }
     switch (page) {
-      case "home":    return <HomePage setPage={setPage} lang={lang} />;
-      case "shop":    return <ShopPage lang={lang} />;
+      case "home":    return <HomePage setPage={setPage} lang={lang} onProductClick={setSelectedProduct} />;
+      case "shop":    return <ShopPage lang={lang} onProductClick={setSelectedProduct} />;
       case "mission": return <MissionPage setPage={setPage} lang={lang} />;
       case "stories": return <StoriesPage lang={lang} />;
       case "about":   return <AboutPage setPage={setPage} lang={lang} />;
-      default:        return <HomePage setPage={setPage} lang={lang} />;
+      default:        return <HomePage setPage={setPage} lang={lang} onProductClick={setSelectedProduct} />;
     }
   };
 
   return (
     <div style={{ background: C.cream, fontFamily: "'DM Sans', sans-serif" }}>
-      <Nav page={page} setPage={setPage} lang={lang} setLang={setLang} />
+      <Nav page={page} setPage={navigate} lang={lang} setLang={setLang} />
       {renderPage()}
-      <Footer setPage={setPage} lang={lang} />
+      <Footer setPage={navigate} lang={lang} />
     </div>
   );
 }
