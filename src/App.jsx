@@ -258,7 +258,7 @@ const PRODUCTS = [
   {
     id: 9, emoji: "🌍", bg: "#e8ede0", series: "Safari Collection",
     animal: "Multi-Species", animalZh: "多物种", animalTw: "多物種",
-    nameEn: "Safari Scarf", nameZh: "狩猎围巾", nameTw: "狩獵圍巾",
+    nameEn: "Safari Scarf", nameZh: "野生动物主题丝巾", nameTw: "野生動物主題絲巾",
     image: scarfFb, org: "Habitat Watcher",
     descEn: "A statement scarf inspired by the wilderness. Wear it, protect it.",
     descZh: "灵感源自荒野的围巾。穿上它，守护它。",
