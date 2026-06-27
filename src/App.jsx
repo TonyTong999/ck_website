@@ -240,11 +240,11 @@ const PRODUCTS = [
   {
     id: 7, emoji: "🦁", bg: "#f0e8d8", series: "Lion Series",
     animal: "African Lion", animalZh: "非洲狮", animalTw: "非洲獅",
-    nameEn: "Simba Badge", nameZh: "辛巴徽章", nameTw: "辛巴徽章",
+    nameEn: "Simba Badge", nameZh: "星巴徽章", nameTw: "星巴徽章",
     image: badgeSimba, org: "Habitat Watcher",
     descEn: "Wear Simba's legacy. Every badge supports lion conservation in the Maasai Mara.",
-    descZh: "佩戴辛巴的传承。每枚徽章支持马赛马拉的狮子保护。",
-    descTw: "佩戴辛巴的傳承。每枚徽章支持馬賽馬拉的獅子保護。",
+    descZh: "佩戴星巴的传承。每枚徽章支持马赛马拉的狮子保护。",
+    descTw: "佩戴星巴的傳承。每枚徽章支持馬賽馬拉的獅子保護。",
   },
   {
     id: 8, emoji: "🌿", bg: "#e8f0e8", series: "Ranger Collection",
@@ -270,13 +270,13 @@ const STORIES = [
   {
     id: 1, emoji: "🦁",
     tagEn: "African Lion · Kenya", tagZh: "非洲狮 · 肯尼亚", tagTw: "非洲獅 · 肯亞",
-    titleEn: "Simba's Kingdom", titleZh: "辛巴的王国", titleTw: "辛巴的王國",
+    titleEn: "Simba's Kingdom", titleZh: "星巴的王国", titleTw: "星巴的王國",
     summaryEn: "Lion populations in the Maasai Mara have dropped 40% over 20 years. Your purchase funds anti-poaching patrols protecting 22 prides.",
     summaryZh: "马赛马拉的狮子数量20年间下降了40%。您的购买资助反盗猎巡逻，守护22个狮群。",
     summaryTw: "馬賽馬拉的獅子數量20年間下降了40%。您的購買資助反盜獵巡邏，守護22個獅群。",
     fullEn: "In Kenya's Maasai Mara, Simba and his pride once ruled a vast savanna. But as human activity expanded, lion habitat shrank. Over the past 20 years, the lion population here has fallen by 40%.\n\nThe root cause isn't poachers — it's conflict. When a lion kills a farmer's cattle, that farmer reaches for a spear. Our conservation partner funds livestock compensation programs and community ranger roles, giving local families a reason to protect lions instead of fighting them.\n\nYou're not just buying a badge — you're buying a future for the savanna.",
-    fullZh: "在肯尼亚的马赛马拉，辛巴和他的狮群曾经统治着广阔的草原。但随着人类活动的扩张，狮子的栖息地不断缩小。过去20年间，这里的狮子数量已下降了40%。\n\n根本原因不是盗猎者——而是冲突。当一头狮子咬死了农民的牛，那个农民就会拿起矛。我们的保护合作伙伴资助牲畜赔偿项目和社区护林员岗位，让当地家庭有理由保护狮子，而不是与它们为敌。\n\n您不只是在买一枚徽章——您是在为草原的未来而购买。",
-    fullTw: "在肯亞的馬賽馬拉，辛巴和他的獅群曾經統治著廣闊的草原。但隨著人類活動的擴張，獅子的棲息地不斷縮小。過去20年間，這裡的獅子數量已下降了40%。\n\n根本原因不是盜獵者——而是衝突。當一頭獅子咬死了農民的牛，那個農民就會拿起矛。我們的保護合作夥伴資助牲畜賠償項目和社區護林員崗位，讓當地家庭有理由保護獅子，而不是與它們為敵。\n\n您不只是在買一枚徽章——您是在為草原的未來而購買。",
+    fullZh: "在肯尼亚的马赛马拉，星巴和他的狮群曾经统治着广阔的草原。但随着人类活动的扩张，狮子的栖息地不断缩小。过去20年间，这里的狮子数量已下降了40%。\n\n根本原因不是盗猎者——而是冲突。当一头狮子咬死了农民的牛，那个农民就会拿起矛。我们的保护合作伙伴资助牲畜赔偿项目和社区护林员岗位，让当地家庭有理由保护狮子，而不是与它们为敌。\n\n您不只是在买一枚徽章——您是在为草原的未来而购买。",
+    fullTw: "在肯亞的馬賽馬拉，星巴和他的獅群曾經統治著廣闊的草原。但隨著人類活動的擴張，獅子的棲息地不斷縮小。過去20年間，這裡的獅子數量已下降了40%。\n\n根本原因不是盜獵者——而是衝突。當一頭獅子咬死了農民的牛，那個農民就會拿起矛。我們的保護合作夥伴資助牲畜賠償項目和社區護林員崗位，讓當地家庭有理由保護獅子，而不是與它們為敵。\n\n您不只是在買一枚徽章——您是在為草原的未來而購買。",
   },
   {
     id: 2, emoji: "🐘",
