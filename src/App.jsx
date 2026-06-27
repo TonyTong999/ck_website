@@ -88,7 +88,7 @@ const T = {
     missionPreviewSub: "每件产品售价\n直接用于保护",
     missionPreviewHeading: "用设计为自然和与它共存的人们创造更好的未来",
     missionPreviewQuote: "「只有当昨晚失去牛的农民还有另一种养家方式，那头狮子才是安全的。」",
-    missionPreviewBody: "我们与Habitat Watcher合作，资助让当地社区获得真实替代生计的项目——牲畜保险、护林员工作、生态旅游培训——让野生动物活着比消失更有价值。",
+    missionPreviewBody: "我们与Habitat Watcher合作，资助让当地社区获得真实替代生计的项目——牲畜保险、巡护员工作、生态旅游培训——让野生动物活着比消失更有价值。",
     missionPreviewBtn: "阅读完整故事",
     featuredLabel: "精选产品",
     featuredHeading1: "每件产品，", featuredHeading2: "守护一个物种",
@@ -105,9 +105,9 @@ const T = {
     missionQuote: "「一件服装不只是布料，它是连接穿着者与那片土地上的社区和生灵的纽带。」",
     missionFounder: "— 创始人",
     missionWhy10Title: "为什么是10%？",
-    missionWhy10Body: "行业标准为1–2%。我们选择10%，因为真正改变社区——建立替代生计、资助护林员项目、运行牲畜赔偿机制——需要持续、有意义的投入。这一承诺已写入我们的公司章程。",
+    missionWhy10Body: "行业标准为1–2%。我们选择10%，因为真正改变社区——建立替代生计、资助巡护员项目、运行牲畜赔偿机制——需要持续、有意义的投入。这一承诺已写入我们的公司章程。",
     missionPartnersTitle: "我们的方式",
-    missionPartnersBody: "人与野生动物的冲突是盗猎和栖息地丧失的主要原因。当一个家庭失去牲畜时，狮子也输了。我们资助扭转这一局面的项目——赔偿机制、替代收入和社区护林员岗位，让当地人直接从野生动物的存续中受益。",
+    missionPartnersBody: "人与野生动物的冲突是盗猎和栖息地丧失的主要原因。当一个家庭失去牲畜时，狮子也输了。我们资助扭转这一局面的项目——赔偿机制、替代收入和社区巡护员岗位，让当地人直接从野生动物的存续中受益。",
     missionPartnersLabel: "保护合作伙伴",
     missionPartnersHeading: "我们的一线合作伙伴",
     missionPartnerDesc: "我们的主要保护合作伙伴。Habitat Watcher在全球范围内监测野生动物栖息地，并将资金引导至一线社区和保护项目。我们将每笔销售的10%直接捐给他们的工作。",
@@ -155,7 +155,7 @@ const T = {
     missionPreviewSub: "每件產品售價\n直接用於保護",
     missionPreviewHeading: "用設計為自然和與它共存的人們創造更好的未來",
     missionPreviewQuote: "「只有當昨晚失去牛的農民還有另一種養家方式，那頭獅子才是安全的。」",
-    missionPreviewBody: "我們與Habitat Watcher合作，資助讓當地社區獲得真實替代生計的項目——牲畜保險、護林員工作、生態旅遊培訓——讓野生動物活著比消失更有價值。",
+    missionPreviewBody: "我們與Habitat Watcher合作，資助讓當地社區獲得真實替代生計的項目——牲畜保險、巡護員工作、生態旅遊培訓——讓野生動物活著比消失更有價值。",
     missionPreviewBtn: "閱讀完整故事",
     featuredLabel: "精選產品",
     featuredHeading1: "每件產品，", featuredHeading2: "守護一個物種",
@@ -172,9 +172,9 @@ const T = {
     missionQuote: "「一件服裝不只是布料，它是連接穿著者與那片土地上的社區和生靈的紐帶。」",
     missionFounder: "— 創辦人",
     missionWhy10Title: "為什麼是10%？",
-    missionWhy10Body: "行業標準為1–2%。我們選擇10%，因為真正改變社區——建立替代生計、資助護林員項目、運行牲畜賠償機制——需要持續、有意義的投入。這一承諾已寫入我們的公司章程。",
+    missionWhy10Body: "行業標準為1–2%。我們選擇10%，因為真正改變社區——建立替代生計、資助巡護員項目、運行牲畜賠償機制——需要持續、有意義的投入。這一承諾已寫入我們的公司章程。",
     missionPartnersTitle: "我們的方式",
-    missionPartnersBody: "人與野生動物的衝突是盜獵和棲息地喪失的主要原因。當一個家庭失去牲畜時，獅子也輸了。我們資助扭轉這一局面的項目——賠償機制、替代收入和社區護林員崗位，讓當地人直接從野生動物的存續中受益。",
+    missionPartnersBody: "人與野生動物的衝突是盜獵和棲息地喪失的主要原因。當一個家庭失去牲畜時，獅子也輸了。我們資助扭轉這一局面的項目——賠償機制、替代收入和社區巡護員崗位，讓當地人直接從野生動物的存續中受益。",
     missionPartnersLabel: "保護合作夥伴",
     missionPartnersHeading: "我們的一線合作夥伴",
     missionPartnerDesc: "我們的主要保護合作夥伴。Habitat Watcher在全球範圍內監測野生動物棲息地，並將資金引導至一線社區和保護項目。我們將每筆銷售的10%直接捐給他們的工作。",
@@ -212,8 +212,8 @@ const T = {
 };
 
 const SERIES_LABEL = {
-  zh: { "All": "全部", "Lion Series": "狮子系列", "Eagle Series": "鹰系列", "Ranger Collection": "护林员系列", "Safari Collection": "狩猎系列" },
-  tw: { "All": "全部", "Lion Series": "獅子系列", "Eagle Series": "鷹系列", "Ranger Collection": "護林員系列", "Safari Collection": "狩獵系列" },
+  zh: { "All": "全部", "Lion Series": "狮子系列", "Eagle Series": "鹰系列", "Ranger Collection": "巡护员系列", "Safari Collection": "狩猎系列" },
+  tw: { "All": "全部", "Lion Series": "獅子系列", "Eagle Series": "鷹系列", "Ranger Collection": "巡護員系列", "Safari Collection": "狩獵系列" },
 };
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -249,11 +249,11 @@ const PRODUCTS = [
   {
     id: 8, emoji: "🌿", bg: "#e8f0e8", series: "Ranger Collection",
     animal: "Multi-Species", animalZh: "多物种", animalTw: "多物種",
-    nameEn: "Ranger Patch", nameZh: "护林员徽章", nameTw: "護林員徽章",
+    nameEn: "Ranger Patch", nameZh: "巡护员徽章", nameTw: "巡護員徽章",
     image: patchImg, org: "Habitat Watcher",
     descEn: "A collectible ranger patch honoring the frontline rangers who protect wildlife every day.",
-    descZh: "收藏版护林员徽章，致敬每天守护野生动物的一线护林员。",
-    descTw: "收藏版護林員徽章，致敬每天守護野生動物的一線護林員。",
+    descZh: "收藏版巡护员徽章，致敬每天守护野生动物的一线巡护员。",
+    descTw: "收藏版巡護員徽章，致敬每天守護野生動物的一線巡護員。",
   },
   {
     id: 9, emoji: "🌍", bg: "#e8ede0", series: "Safari Collection",
@@ -275,8 +275,8 @@ const STORIES = [
     summaryZh: "马赛马拉的狮子数量20年间下降了40%。您的购买资助反盗猎巡逻，守护22个狮群。",
     summaryTw: "馬賽馬拉的獅子數量20年間下降了40%。您的購買資助反盜獵巡邏，守護22個獅群。",
     fullEn: "In Kenya's Maasai Mara, Simba and his pride once ruled a vast savanna. But as human activity expanded, lion habitat shrank. Over the past 20 years, the lion population here has fallen by 40%.\n\nThe root cause isn't poachers — it's conflict. When a lion kills a farmer's cattle, that farmer reaches for a spear. Our conservation partner funds livestock compensation programs and community ranger roles, giving local families a reason to protect lions instead of fighting them.\n\nYou're not just buying a badge — you're buying a future for the savanna.",
-    fullZh: "在肯尼亚的马赛马拉，星巴和他的狮群曾经统治着广阔的草原。但随着人类活动的扩张，狮子的栖息地不断缩小。过去20年间，这里的狮子数量已下降了40%。\n\n根本原因不是盗猎者——而是冲突。当一头狮子咬死了农民的牛，那个农民就会拿起矛。我们的保护合作伙伴资助牲畜赔偿项目和社区护林员岗位，让当地家庭有理由保护狮子，而不是与它们为敌。\n\n您不只是在买一枚徽章——您是在为草原的未来而购买。",
-    fullTw: "在肯亞的馬賽馬拉，星巴和他的獅群曾經統治著廣闊的草原。但隨著人類活動的擴張，獅子的棲息地不斷縮小。過去20年間，這裡的獅子數量已下降了40%。\n\n根本原因不是盜獵者——而是衝突。當一頭獅子咬死了農民的牛，那個農民就會拿起矛。我們的保護合作夥伴資助牲畜賠償項目和社區護林員崗位，讓當地家庭有理由保護獅子，而不是與它們為敵。\n\n您不只是在買一枚徽章——您是在為草原的未來而購買。",
+    fullZh: "在肯尼亚的马赛马拉，星巴和他的狮群曾经统治着广阔的草原。但随着人类活动的扩张，狮子的栖息地不断缩小。过去20年间，这里的狮子数量已下降了40%。\n\n根本原因不是盗猎者——而是冲突。当一头狮子咬死了农民的牛，那个农民就会拿起矛。我们的保护合作伙伴资助牲畜赔偿项目和社区巡护员岗位，让当地家庭有理由保护狮子，而不是与它们为敌。\n\n您不只是在买一枚徽章——您是在为草原的未来而购买。",
+    fullTw: "在肯亞的馬賽馬拉，星巴和他的獅群曾經統治著廣闊的草原。但隨著人類活動的擴張，獅子的棲息地不斷縮小。過去20年間，這裡的獅子數量已下降了40%。\n\n根本原因不是盜獵者——而是衝突。當一頭獅子咬死了農民的牛，那個農民就會拿起矛。我們的保護合作夥伴資助牲畜賠償項目和社區巡護員崗位，讓當地家庭有理由保護獅子，而不是與它們為敵。\n\n您不只是在買一枚徽章——您是在為草原的未來而購買。",
   },
   {
     id: 2, emoji: "🐘",
@@ -297,8 +297,8 @@ const STORIES = [
     summaryZh: "北方白犀牛功能性灭绝。我们支持奥尔佩杰塔自然保护区，保护最后的南方白犀牛种群。",
     summaryTw: "北方白犀牛功能性滅絕。我們支持奧爾佩杰塔自然保護區，保護最後的南方白犀牛種群。",
     fullEn: "In 2018, the last male northern white rhino, Sudan, left this world. Now only two northern white rhinos remain on Earth — both female, both unable to reproduce naturally.\n\nRhino horn's black-market value drives poaching. But the deeper crisis is that communities surrounding rhino habitats have historically received little benefit from conservation — and so have little reason to protect them.\n\nOl Pejeta Conservancy is changing that, employing local community members as rangers and building a tourism economy that makes wildlife worth protecting. Scientists are also attempting IVF techniques to pull the species back from extinction. This isn't just conservation — it's resurrection.",
-    fullZh: "2018年，最后一头雄性北方白犀牛苏丹离开了这个世界。现在地球上只剩两头北方白犀牛——都是雌性，都无法自然繁殖。\n\n犀牛角的黑市价值驱动着盗猎。但更深层的危机在于，犀牛栖息地周边的社区历来从保护中获益甚少——因此几乎没有理由去保护它们。\n\n奥尔佩杰塔自然保护区正在改变这一局面，雇用当地社区成员担任护林员，并建立起让野生动物值得保护的旅游经济。科学家们也在尝试用IVF技术将这个物种从灭绝边缘拉回来。这不只是保护——这是复育。",
-    fullTw: "2018年，最後一頭雄性北方白犀牛蘇丹離開了這個世界。現在地球上只剩兩頭北方白犀牛——都是雌性，都無法自然繁殖。\n\n犀牛角的黑市價值驅動著盜獵。但更深層的危機在於，犀牛棲息地周邊的社區歷來從保護中獲益甚少——因此幾乎沒有理由去保護它們。\n\n奧爾佩杰塔自然保護區正在改變這一局面，雇用當地社區成員擔任護林員，並建立起讓野生動物值得保護的旅遊經濟。科學家們也在嘗試用IVF技術將這個物種從滅絕邊緣拉回來。這不只是保護——這是復育。",
+    fullZh: "2018年，最后一头雄性北方白犀牛苏丹离开了这个世界。现在地球上只剩两头北方白犀牛——都是雌性，都无法自然繁殖。\n\n犀牛角的黑市价值驱动着盗猎。但更深层的危机在于，犀牛栖息地周边的社区历来从保护中获益甚少——因此几乎没有理由去保护它们。\n\n奥尔佩杰塔自然保护区正在改变这一局面，雇用当地社区成员担任巡护员，并建立起让野生动物值得保护的旅游经济。科学家们也在尝试用IVF技术将这个物种从灭绝边缘拉回来。这不只是保护——这是复育。",
+    fullTw: "2018年，最後一頭雄性北方白犀牛蘇丹離開了這個世界。現在地球上只剩兩頭北方白犀牛——都是雌性，都無法自然繁殖。\n\n犀牛角的黑市價值驅動著盜獵。但更深層的危機在於，犀牛棲息地周邊的社區歷來從保護中獲益甚少——因此幾乎沒有理由去保護它們。\n\n奧爾佩杰塔自然保護區正在改變這一局面，雇用當地社區成員擔任巡護員，並建立起讓野生動物值得保護的旅遊經濟。科學家們也在嘗試用IVF技術將這個物種從滅絕邊緣拉回來。這不只是保護——這是復育。",
   },
 ];
 
