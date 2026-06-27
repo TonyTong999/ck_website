@@ -607,9 +607,9 @@ function ProductDetailPage({ product, lang, onBack }) {
       </div>
       <div style={{ padding: isMobile ? "32px 16px 64px" : "64px 48px", maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 32 : 64 }}>
-          <div style={{ borderRadius: 4, overflow: "hidden", background: p.bg, height: isMobile ? 260 : 460 }}>
+          <div style={{ borderRadius: 4, overflow: "hidden", background: p.bg, height: isMobile ? 320 : 460, display: "flex", alignItems: "center", justifyContent: "center" }}>
             {p.image
-              ? <img src={p.image} alt={name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              ? <img src={p.image} alt={name} style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
               : <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 120 }}>{p.emoji ?? "🦁"}</div>
             }
           </div>
@@ -894,7 +894,7 @@ export default function App() {
 
   const navigate = (newPage) => { setSelectedProduct(null); setPage(newPage); };
 
-  useEffect(() => { window.scrollTo(0, 0); }, [page]);
+  useEffect(() => { window.scrollTo(0, 0); }, [page, selectedProduct]);
 
   const renderPage = () => {
     if (selectedProduct !== null) {
