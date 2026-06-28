@@ -291,6 +291,58 @@ const STORIES = [
     fullZh: `我最初在肯尼亚探索野保之路是从内罗毕开始的，那还是在2010年。我其实并不知道这条路怎么走，我不是学野保专业的，也没有任何野外实地工作的经验，有的只是一个儿时的梦想，也不知道能否实现，只能走一步算一步了。我很早就听说过母狮艾尔莎的故事，很熟悉，看过书，也看过电影，乔治•亚当森在梅鲁和科拉野化狮子的生活正是我所向往的，但还是感觉离我的生活有点遥远。在内罗毕期间，我挤过马塔图，往返于内罗毕市中心、凯伦、基莱莱希瓦、基里马尼、河滨之间的区域，住在不同的朋友家里。肯尼亚很多政府部门都聚集在市中心，所以经常办事都要去那里，人多车多，非常嘈杂，进出市中心又很堵车。斯坦利酒店是我在内罗毕期间经常光顾的地方，不是去喝酒，而是去见朋友谈事情，这可能是内罗毕最有名气、历史最悠久的酒店。在里面会有穿越到20世纪初期的英国殖民时代的感觉，对于躲避外面的喧嚣似乎很有帮助，当时还不知道这也是托尼•菲兹约翰在1969年投靠乔治•亚当森之前在内罗毕最喜欢光顾的地方。我一直很相信世界上存在着一些不可思议的纽带能够把来自不同地域和不同时代的人联系起来，但我当时没有想到后来我有机会认识托尼，然后通过托尼我又更了解乔治。虽然我与乔治从未谋面，但对狮子的挚爱和对野保的专注让我们共同书写历史，一部人类的野保之路。\n\n我在内罗毕有一个很要好的朋友，他叫拉纳，是一个印度裔肯尼亚人，出生于体育世家，父亲是肯尼亚板球冠军，但他对体育没有什么兴趣，他是一个商人，一个也喜欢狮子的商人。2010年9月，他带我去斯瓦拉平原看他新买的土地，还认识了一些新朋友。通过这些朋友的介绍，我们一起结识了山迪·辛普森。山迪来自苏格兰，住在内罗毕东部郊外斯瓦拉平原，家里养着三只狮子，都是从内罗毕国家公园逃出来的，年龄偏大已经无法放归野外，只能养在露天的围栏里。我和拉纳经常去看狮子，也希望帮助山迪实现他建立自然保护地的计划，为内罗毕国家公园的野生动物创建一个安全的走廊。为此我还在斯瓦纳平原租了一处木屋住下来，这样可以离那三只狮子更近些。当年10月的一天，拉纳突然兴高采烈地给我打电话，邀请我去他家吃饭。他夫人做了正宗的印度餐，晚餐后，拉纳拿出了一盘录像带，很神秘地对我说："我保证这应该是你最喜欢的一部电影。"这是我第一次观看《与狮同行》（To walk with lions)，这部电影正是讲述了当年托尼•菲兹约翰去科拉保护区加入乔治•亚当森野化狮子工作的传奇故事。从小到大我看过无数电影，无论是是情节还是音乐，这部电影毫无疑问都是我最喜欢的电影。\n\n看完电影之后，我回到内罗毕的住宿点开始上网搜索乔治•亚当森和托尼•菲兹约翰的内容，居然发现了乔治•亚当森基金会的网站，做的很简陋，我在里面找到了一个联系邮箱，试着写了一封信给托尼，没有指望能收到回复，没想到10天后居然收到了他的回信，从此我们开始书信往来。\n\n2012年1月，托尼从坦桑尼亚回到肯尼亚，要在内罗毕待几天。我们约好在凯伦一处餐厅见面，当时我还带着夫人和8岁大的女儿一起。托尼此时已经是67岁，而我是39岁，我自然不会错过这个机会去多了解乔治和托尼当年在科拉与狮子为伍的生活。没想到之前网络上有一段千万点击量的人狮拥抱的视频跟他也有直接的关系。那只来自伦敦的小雄狮克里斯蒂安就是乔治和托尼在科拉养大的，之后成功野化放生。托尼跟乔治在一起工作了18年，直到乔治在1989年被索马里盗猎分子开枪打死之后才离开了科拉，离开了肯尼亚，在坦桑尼亚成功创建了姆科玛奇自然保护区。2019年，姆科马齐成为国家公园，肯尼亚政府后来又热情邀请托尼回到肯尼亚，希望他能够帮助再造科拉保护区。\n\n在那次会面中，托尼很好奇我为什么要从中国来肯尼亚保护狮子。我当时正处于一个进退维谷的境地，一方面内罗毕生活成本很高，我又没有收入。另一方面很多人对中国人有偏见，认为中国人到非洲来都是做生意的，认为中国人很喜欢买象牙和其它野生动物产品。这种偏见让我很难融入当地的野保圈子，更不用说能加入当地的野保机构以获得一些收入和工作经验。在听完我讲述这段经历之后，托尼一改他说话幽默的风格，很严肃庄重地对我说："星巴，非洲是人类的起源地，也是野生动物最后的伊甸园。中国是世界上人口最多的国家，现在已经有很多只中国人在非洲生活工作，但没有人来跟我们一起做野生动物保护的工作，非洲需要中国的帮助，你是我认识的第一个来非洲做野生动物保护工作的中国人，自然会遇见很多困难，会有很多人质疑，但你一定要坚持下去，因为你的行动会启发和鼓励更多中国人来关注和支持这个伟大的事业。" 托尼对我的鼓励是我当时能够坚持下来的主要动力。托尼当年也不是野保专业出身，在内罗毕也晃荡了几年，直到在科拉加入乔治的团队，现在已是传奇野保人物。我至今都很感激托尼，如果不是他，我当时很有可能就放弃了野保的理想，很有可能就灰溜溜地回到中国，做一件与野保毫不相关但平凡稳定的工作，但这显然不是我想要的生活。人生短暂，如果不能去追寻自己的理想去过想要的生活，就真是太遗憾了。\n\n那次会面之后我们经常保持通信联系，我向他请教了很多关于狮子习性的问题，这对于我研究人与狮子的关系有莫大的帮助。2014年，他还邀请我去科拉保护区出席乔治•亚当森纪念仪式。我约上了来自肯尼亚野生动物管理局的首席兽医多米尼克博士一起沿着当年他们经常走的线路驱车9个小时来到科拉保护区，对他们从内罗毕走陆路运送补给过来的不易感同身受。以前在斯瓦拉平原认识的一个朋友盖伊还曾经开飞机为乔治和托尼运送过补给。在科拉我们见到了托尼，我送给他一个运动相机，他在仪式上致辞回顾了当年与乔治在一起工作生活守护科拉的经历，表达了对乔治的深深怀念之情。此次在科拉我们有机会探访了他们当年生活的狮子营地，登上了旁边的岩石山，走到了塔纳河边。同年10月，我与托尼还在洛杉矶偶遇，我和刘赋、刘桐汐一起参加了他的筹款沙龙。之后就再也没有见过面，但一直保持邮件联系，我还试图邀请托尼来中国做演讲，好为他写的书《Born Wild》（生而狂野）中文版做宣传，但这些事情都被疫情给耽误了。2022-2023年我给托尼写了好几封信，他都没有回复。以前他给我回信都是很快的，我觉得有些反常，就上网搜索他的名字，却发现他已经于2022年5月离世。\n\n2015年，我邀请托尼为我的《守护狮群》（三联书店出版）题序，他欣然应允，很快就发给了我。托尼在这个序言里写到："乔治在1970年代初期坐在科拉的营地里，与一些前来拜访的人交谈，我听到他说：'当我在1924年来到这里时，野生动物似乎会永远存在，那时还没有人类。'即使在我于1960年代后期来到肯尼亚时，我也无法想象犀牛、大象、狮子和许多其他动物会从已经受保护的地区消失。现在，迅速增长的人口逐渐蚕食和分割野生动物的栖息地，即使是在一些面积很大的自然保护区，如肯尼亚的察沃国家公园（Tsavo National Park）和坦桑尼亚的塞勒斯（Selous national reserve）野生动物保护区。在过去几年里，我结识了星巴（Simba Qiang Zhuo），他的非洲名字在斯瓦希里语中的意思是狮子，我们对这个物种的喜爱显然有很多共同之处。他在马赛马拉致力于解决人兽冲突、在中国和世界其他地方不知疲倦的演讲以启发公众来关注野生动物保护，这是真正来自荒野的声音，我从未低估过一个人可以捕捉整个时代情绪的能力。我也在肯尼亚的科拉国家公园经历过与这些动物的爱和友谊，我与乔治·亚当森一起将近20年的时间里将救助的狮子放归自然。我们跨越了恐惧，与这些令人难以置信的物种建立了密切而持久的关系，我对它们和它们所过的生活的尊重是无限的。星巴所做的一切都并不容易，他不得不放弃许多现代世界所认为理所当然的舒适和愉悦，以传播他的理念。我对我们如此深爱的自然感到担忧，它必须得到延续，它是我们与过去精神联系的桥梁，我们应该与之和解。星巴给了我希望，一切并未失去，而这就足够了。"\n\n因为托尼和乔治的缘故，每次回到肯尼亚，我几乎都会去纳瓦沙探访爱尔莎庄园，那里是乔治和乔伊共同生活过的地方，也是托尼去找乔伊打听是否有工作机会的地方。虽然乔伊和托尼关系不睦，但正是乔伊告诉托尼乔治在科拉保护区缺一个助手，才使得托尼找到他真正想过的生活。\n\n我和托尼来自不同的地方，他来自英格兰，我来自中国。我们也来自不同的时代，他比我大28岁，我们应该是忘年之交，但我们也有很多相似的地方，我们来非洲之前也都很喜欢《人猿泰山》，都很向往非洲，都喜欢探险，都喜欢斯坦利酒店，我们都选择了生而自由与生而狂野的人生之路。\n\n托尼离开了我们，这让人感到无限伤感，此生我已经没有机会再跟他聊天，但他的精神遗产——乐观、幽默、勇敢、不屈将持续照亮我在野生动物保护的路上前行的方向。\n\n向托尼致敬！`,
     fullTw: null,
   },
+  {
+    id: 3, type: "animal", emoji: "🐘",
+    tagEn: "African Elephant · Kenya", tagZh: "非洲象 · 肯尼亚", tagTw: "非洲象 · 肯亞",
+    titleEn: "Elephants and Bees: A Peaceful Fence",
+    titleZh: "大象与蜂巢：和平的围栏",
+    titleTw: "大象與蜂巢：和平的圍欄",
+    summaryEn: "In parts of Kenya, elephants raid farms at night, destroying months of work in a single visit. A surprising solution — beehive fences — protects crops, generates honey income, and keeps both farmers and elephants safe.",
+    summaryZh: "在肯尼亚部分地区，大象常在夜间侵入农田，一夜之间便可毁掉数月的心血。一种令人意想不到的解决方案——蜂巢围栏——既能守护庄稼，又能创造蜂蜜收入，让人与大象共同受益。",
+    summaryTw: "在肯亞部分地區，大象常在夜間侵入農田，一夜之間便可毀掉數月的心血。一種令人意想不到的解決方案——蜂巢圍欄——既能守護莊稼，又能創造蜂蜜收入，讓人與大象共同受益。",
+    fullEn: "In parts of Kenya, elephants sometimes enter farms at night to eat crops. For a farmer, one elephant raid can destroy months of work. For the elephant, the farm may simply be food in a landscape where natural habitat is shrinking.\n\nOne creative solution has come from the elephants themselves: elephants naturally avoid bees. Conservationists and local communities have built beehive fences around farms, using hanging beehives connected by wires. When elephants try to enter, the hives shake, bees become active, and the elephants usually move away.\n\nThis solution does more than protect crops. It also creates honey, gives farmers an extra source of income, and reduces the need for people to harm elephants. It is a powerful example of coexistence: protecting people's livelihoods while allowing elephants to survive.",
+    fullZh: `在肯尼亚部分地区，大象有时会在夜间进入农田，取食庄稼。对于农民来说，一次大象的到来可能就会毁掉数月的辛勤劳动。而对大象而言，随着自然栖息地不断萎缩，农田或许不过是它们在日益逼仄的生存空间里寻到的一处食源。\n\n这一困境催生了一种出人意料的解决方案，而这个方案的灵感，恰恰来自大象本身：大象天生惧怕蜜蜂。于是，保育人员与当地社区合作，在农田周围建起了「蜂巢围栏」——将悬挂的蜂箱以绳索相连。当大象试图靠近时，蜂箱随之晃动，蜜蜂受到惊扰，大象通常便会退避三舍。\n\n这一方案的意义远不止于此。它还能生产蜂蜜，为农民带来额外收入，同时减少人们伤害大象的动机。这是共存之道的有力印证：在保障人们生计的同时，也为大象留下了生存的空间。`,
+    fullTw: null,
+  },
+  {
+    id: 4, type: "animal", emoji: "🐘",
+    tagEn: "African Elephant · Amboseli, Kenya", tagZh: "非洲象 · 肯尼亚安博塞利", tagTw: "非洲象 · 肯亞安博塞利",
+    titleEn: "Tolstoy: The Great Tusker Lost to Conflict",
+    titleZh: "托尔斯泰：在冲突中陨落的巨象",
+    titleTw: "托爾斯泰：在衝突中殞落的巨象",
+    summaryEn: "Tolstoy was one of Amboseli's famous super-tusker elephants, living more than 50 years near Mount Kilimanjaro. His death from a spear wound during a crop-raiding conflict shows the painful reality when shrinking habitat forces wildlife and farming communities into collision.",
+    summaryZh: "托尔斯泰是安博塞利最著名的「超级大牙」象之一，在乞力马扎罗山附近度过了五十余年。他在一次入侵农田的冲突中被长矛刺伤，最终不治而亡，揭示了栖息地萎缩时人与野生动物相互碰撞的残酷现实。",
+    summaryTw: "托爾斯泰是安博塞利最著名的「超級大牙」象之一，在乞力馬扎羅山附近度過了五十餘年。他在一次入侵農田的衝突中被長矛刺傷，最終不治而亡，揭示了棲息地萎縮時人與野生動物相互碰撞的殘酷現實。",
+    fullEn: "Tolstoy was one of Amboseli's famous super-tusker elephants, known for his enormous ivory and long life. Born in 1971 near Mount Kilimanjaro, he lived for more than 50 years across the Amboseli ecosystem.\n\nBut as farms, fences, and settlements expanded, ancient elephant routes became harder to follow. Like many elephants, Tolstoy sometimes entered farmland in search of food. He was wounded by a spear during a crop-raiding conflict and later died from complications related to the injury.\n\nHis death shows the painful reality of human–wildlife conflict. The farmer was protecting a livelihood. The elephant was following instinct and memory through a landscape that had changed. Conservation must address both sides: wildlife needs space, and communities need protection, fair support, and practical tools to live safely beside large animals.",
+    fullZh: `托尔斯泰是安博塞利最著名的「超级大牙」象之一，以其巨大的象牙和漫长的生命而闻名。它生于1971年，出没于乞力马扎罗山附近，在安博塞利生态系统中存活了超过五十年。\n\n然而，随着农田、围栏与定居点的不断扩张，大象们世代迁徙的古老路线变得愈加难以通行。与许多同类一样，托尔斯泰有时也会进入农地觅食。在一次与人的冲突中，它被长矛刺伤，随后因伤势引发的并发症而离世。\n\n它的死，揭示了人与野生动物冲突中那令人痛心的现实——农民在守护自己的生计，大象则在凭借本能与记忆，穿越一片已面目全非的土地。保育工作必须直面这两种需求：野生动物需要足够的空间，社区则需要切实的保护、公平的支持，以及与大型动物安全共存的实用工具。`,
+    fullTw: null,
+  },
+  {
+    id: 5, type: "animal", emoji: "🐘",
+    tagEn: "African Elephant · Samburu, Kenya", tagZh: "非洲象 · 肯尼亚桑布鲁", tagTw: "非洲象 · 肯亞桑布魯",
+    titleEn: "Reteti: A Community Raising Orphaned Elephants",
+    titleZh: "雷泰提：由社区守护的象孤儿",
+    titleTw: "雷泰提：由社區守護的象孤兒",
+    summaryEn: "In northern Kenya, Reteti Elephant Sanctuary is the first community-owned elephant orphanage in Africa, run by the Samburu people. It shows what conservation looks like when local communities lead — not as bystanders, but as keepers.",
+    summaryZh: "在肯尼亚北部，雷泰提大象保护区是非洲第一家由原住民社区自主所有的象孤儿院，由桑布鲁人运营。它展示了当地社区主导保育时的面貌——不是旁观者，而是真正的守护者。",
+    summaryTw: "在肯亞北部，雷泰提大象保護區是非洲第一家由原住民社區自主所有的象孤兒院，由桑布魯人運營。它展示了當地社區主導保育時的面貌——不是旁觀者，而是真正的守護者。",
+    fullEn: "In northern Kenya, Reteti Elephant Sanctuary offers a hopeful model. It is an Indigenous community-owned elephant sanctuary run by the local Samburu community. Orphaned and abandoned elephant calves are rescued, cared for, and eventually prepared to return to the wild.\n\nThe story is powerful because it changes the role of local people. Communities are not treated as outsiders to conservation; they are the leaders of it. Samburu keepers care for the calves, local knowledge becomes part of wildlife protection, and conservation creates jobs, pride, and direct community benefit.\n\nReteti shows that when local communities benefit from conservation, wildlife becomes part of a shared future rather than a burden.",
+    fullZh: "在肯尼亚北部，雷泰提大象保护区提供了一个充满希望的范例。这是一家由当地桑布鲁社区自主所有并运营的土著大象保护区，专门救助和照料被遗弃或孤立的象孤儿，并最终帮助它们重返野外。\n\n这个故事之所以令人动容，在于它重新定义了当地人在保育中的角色。社区成员不再是被排除在外的旁观者，而是成为了保育的主导者。桑布鲁护养员亲手照料小象，本土知识被纳入野生动物保护的实践，保育工作也为社区带来了就业机会、集体荣誉与实实在在的利益。\n\n雷泰提的故事告诉我们：当地社区真正从保育中获益时，野生动物便不再是一种负担，而是成为共同未来的一部分。",
+    fullTw: null,
+  },
+  {
+    id: 6, type: "animal", emoji: "🦏",
+    tagEn: "Northern White Rhino · Ol Pejeta, Kenya", tagZh: "北方白犀牛 · 肯尼亚奥尔佩杰塔", tagTw: "北方白犀牛 · 肯亞奧爾佩傑塔",
+    titleEn: "Sudan, Najin, and Fatu: The Last Northern White Rhinos",
+    titleZh: "苏丹、纳金与法图：最后的北方白犀牛",
+    titleTw: "蘇丹、納金與法圖：最後的北方白犀牛",
+    summaryEn: "Sudan, the last male northern white rhino, died at Ol Pejeta Conservancy in 2018. Only two remain — Najin and Fatu — living under round-the-clock protection. Their story is a warning about what happens when conservation arrives too late.",
+    summaryZh: "最后一头雄性北方白犀牛苏丹于2018年在奥尔佩杰塔保护区离世，地球上仅剩纳金与法图两头雌性。她们在全天候守护下生活，提醒着我们：当保育姗姗来迟，将面对怎样的代价。",
+    summaryTw: "最後一頭雄性北方白犀牛蘇丹於2018年在奧爾佩傑塔保護區離世，地球上僅剩納金與法圖兩頭雌性。她們在全天候守護下生活，提醒著我們：當保育姍姍來遲，將面對怎樣的代價。",
+    fullEn: "At Ol Pejeta Conservancy in Kenya, Sudan became known around the world as the last male northern white rhino. He died in 2018, leaving only two northern white rhinos alive: Najin and Fatu, both female.\n\nTheir story is not mainly about direct conflict with farmers. It is about another kind of human–animal relationship: extinction caused by human demand, especially poaching for rhino horn, followed by a desperate human effort to save what remains.\n\nToday, Najin and Fatu live under constant protection at Ol Pejeta. Rangers, caretakers, veterinarians, scientists, and conservation teams work to protect them and support advanced reproductive efforts that may help keep the subspecies from disappearing completely.\n\nTheir story reminds us that conservation should not wait until the final survivors are left behind fences and guards. Protection is strongest when it prevents conflict, poaching, and habitat loss before a species reaches the edge.",
+    fullZh: "在肯尼亚奥尔佩杰塔保护区，苏丹以世界上最后一头雄性北方白犀牛的身份闻名于世。2018年，苏丹离世，仅留下两头北方白犀牛：雌性的纳金和法图。\n\n她们的故事，与农民对峙大象的冲突并不相同。它折射的，是另一种人与动物之间的关系：人类的欲望——尤其是对犀牛角的需求——催生了大规模盗猎，进而导致了物种濒临灭绝；而后，人类又开始拼尽全力，试图挽救所剩无几的生命。\n\n今天，纳金和法图生活在奥尔佩杰塔保护区，处于昼夜不间断的守卫之下。巡护员、护养员、兽医、科学家和保育团队携手合作，一方面为她们提供保护，另一方面推动先进的辅助生殖研究，希望以科技之力，阻止这一亚种彻底消亡。\n\n她们的故事提醒我们：保育工作不应等到最后的幸存者只能被关在围栏与守卫之后才姗姗来迟。最有力的保护，发生在冲突、盗猎和栖息地丧失彻底将一个物种推向悬崖之前。",
+    fullTw: null,
+  },
 ];
 
 // ─── Color Variables ──────────────────────────────────────────────────────────
@@ -807,12 +859,12 @@ function StoriesPage({ lang }) {
       {animalStories.length > 0 && (
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: isMobile ? "32px 16px 48px" : "48px 48px 80px" }}>
           <div style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(200,169,110,0.4)", marginBottom: 16 }}>{t.storiesWildlifeLabel}</div>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(300px, 1fr))", gap: 1, background: "rgba(200,169,110,0.07)", maxWidth: animalStories.length === 1 ? 500 : "none" }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(300px, 1fr))", gap: 16, maxWidth: animalStories.length === 1 ? 500 : "none" }}>
             {animalStories.map(s => (
               <div key={s.id} onClick={() => setSelected(s.id)}
-                style={{ background: C.dark, padding: "36px 28px", cursor: "pointer", transition: "background 0.2s" }}
-                onMouseEnter={e => e.currentTarget.style.background = "rgba(44,58,46,0.5)"}
-                onMouseLeave={e => e.currentTarget.style.background = C.dark}>
+                style={{ background: C.earth, padding: "36px 28px", cursor: "pointer", transition: "background 0.2s", border: "1px solid rgba(200,169,110,0.08)" }}
+                onMouseEnter={e => e.currentTarget.style.background = "rgba(44,58,46,0.7)"}
+                onMouseLeave={e => e.currentTarget.style.background = C.earth}>
                 <span style={{ fontSize: 52, display: "block", marginBottom: 20 }}>{s.emoji}</span>
                 <div style={{ fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: C.sand, marginBottom: 10 }}>{pick(lang, s.tagEn, s.tagZh, s.tagTw)}</div>
                 <div style={{ fontFamily: "Georgia,serif", fontSize: 20, color: C.sandLight, marginBottom: 14 }}>{pick(lang, s.titleEn, s.titleZh, s.titleTw)}</div>
