@@ -16,8 +16,8 @@ const T = {
     heroHeading1: "Every Purchase", heroHeading2: "Builds a Better Future",
     heroBody: "10% of every product sold goes directly to wildlife conservation. Not a tagline — it's written into our articles of incorporation.",
     heroCta: "View Collection", heroCta2: "Our Mission",
-    statDonated: "Of Every Sale Donated", statAnimals: "Animals Protected",
-    statReserves: "Partner Reserves", statCountries: "Countries",
+    statDonated: "Of Every Sale Donated",
+    statReserves: "Partner Reserves",
     missionSectionLabel: "Our Mission",
     missionPreviewSub: "Of every product sold\ngoes directly to conservation",
     missionPreviewHeading: "Design that funds a better future for nature and the people who live with it",
@@ -82,8 +82,8 @@ const T = {
     heroHeading1: "每一次购买", heroHeading2: "共创更好的未来",
     heroBody: "每件产品售价的10%直接用于野生动物保护。这不是宣传语——它已写入我们的公司章程。",
     heroCta: "浏览系列", heroCta2: "我们的使命",
-    statDonated: "每笔销售捐出", statAnimals: "受保护动物",
-    statReserves: "合作保护区", statCountries: "覆盖国家",
+    statDonated: "每笔销售捐出",
+    statReserves: "合作保护区",
     missionSectionLabel: "我们的使命",
     missionPreviewSub: "每件产品售价\n直接用于保护",
     missionPreviewHeading: "用设计为自然和与它共存的人们创造更好的未来",
@@ -148,8 +148,8 @@ const T = {
     heroHeading1: "每一次購買", heroHeading2: "共創更好的未來",
     heroBody: "每件產品售價的10%直接用於野生動物保護。這不是宣傳語——它已寫入我們的公司章程。",
     heroCta: "瀏覽系列", heroCta2: "我們的使命",
-    statDonated: "每筆銷售捐出", statAnimals: "受保護動物",
-    statReserves: "合作保護區", statCountries: "覆蓋國家",
+    statDonated: "每筆銷售捐出",
+    statReserves: "合作保護區",
     missionSectionLabel: "我們的使命",
     missionPreviewSub: "每件產品售價\n直接用於保護",
     missionPreviewHeading: "用設計為自然和與它共存的人們創造更好的未來",
@@ -541,7 +541,7 @@ function HomePage({ setPage, lang, onProductClick }) {
 
       {/* Stats Bar */}
       <div style={{ background: C.earth, padding: isMobile ? "24px 16px" : "30px 48px", display: "flex", justifyContent: "center", gap: isMobile ? 28 : 72, flexWrap: "wrap" }}>
-        {[["10%", t.statDonated], ["1,247", t.statAnimals], ["6", t.statReserves], ["12", t.statCountries]].map(([num, label]) => (
+        {[["10%", t.statDonated], ["22", t.statReserves]].map(([num, label]) => (
           <div key={label} style={{ textAlign: "center" }}>
             <span style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? 28 : 34, color: C.sand, display: "block", lineHeight: 1 }}>{num}</span>
             <span style={{ fontSize: 11, color: "rgba(200,169,110,0.55)", letterSpacing: "0.12em", textTransform: "uppercase", marginTop: 5, display: "block" }}>{label}</span>
