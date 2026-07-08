@@ -5,6 +5,7 @@ import badgeSimba from "../BADGE-SIMBA.webp";
 import patchImg from "../PATCH.webp";
 import scarfFb from "../SCARF-FB.webp";
 import tsEagle from "../TS_EAGLE.webp";
+import tsLion from "../TS_LION.webp";
 
 // ─── Translations ─────────────────────────────────────────────────────────────
 
@@ -226,15 +227,6 @@ const PRODUCTS = [
     descTw: "每件產品守護肯亞草原上最後的獅群。",
   },
   {
-    id: 6, emoji: "🦅", bg: "#e0e8f0", series: "Eagle Series",
-    animal: "Eagle", animalZh: "鹰", animalTw: "鷹",
-    nameEn: "Cloud Tee", nameZh: "云端T恤", nameTw: "雲端T恤",
-    image: tsEagle, org: "Habitat Watcher",
-    descEn: "Soaring above boundaries. Each garment funds one field survey.",
-    descZh: "翱翔于边界之上。每件服装资助一次野外调查。",
-    descTw: "翱翔於邊界之上。每件服裝資助一次野外調查。",
-  },
-  {
     id: 7, emoji: "🦁", bg: "#f0e8d8", series: "Lion Series",
     animal: "African Lion", animalZh: "非洲狮", animalTw: "非洲獅",
     nameEn: "Simba Badge", nameZh: "星巴徽章", nameTw: "星巴徽章",
@@ -242,6 +234,24 @@ const PRODUCTS = [
     descEn: "Wear Simba's legacy. Every badge supports lion conservation in the Maasai Mara.",
     descZh: "佩戴星巴的传承。每枚徽章支持马赛马拉的狮子保护。",
     descTw: "佩戴星巴的傳承。每枚徽章支持馬賽馬拉的獅子保護。",
+  },
+  {
+    id: 10, emoji: "🦁", bg: "#f0e8d8", series: "Lion Series",
+    animal: "African Lion", animalZh: "非洲狮", animalTw: "非洲獅",
+    nameEn: "Lion Tee", nameZh: "狮子T恤", nameTw: "獅子T恤",
+    image: tsLion, org: "Habitat Watcher",
+    descEn: "Wear the pride. Every garment funds one field survey protecting Kenya's lions.",
+    descZh: "身披狮群荣耀。每件服装资助一次守护肯尼亚狮子的野外调查。",
+    descTw: "身披獅群榮耀。每件服裝資助一次守護肯亞獅子的野外調查。",
+  },
+  {
+    id: 6, emoji: "🦅", bg: "#e0e8f0", series: "Eagle Series",
+    animal: "Eagle", animalZh: "鹰", animalTw: "鷹",
+    nameEn: "Cloud Tee", nameZh: "云端T恤", nameTw: "雲端T恤",
+    image: tsEagle, org: "Habitat Watcher",
+    descEn: "Soaring above boundaries. Each garment funds one field survey.",
+    descZh: "翱翔于边界之上。每件服装资助一次野外调查。",
+    descTw: "翱翔於邊界之上。每件服裝資助一次野外調查。",
   },
   {
     id: 8, emoji: "🌿", bg: "#e8f0e8", series: "Ranger Collection",
