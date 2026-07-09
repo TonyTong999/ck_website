@@ -6,6 +6,8 @@ import patchImg from "../PATCH.webp";
 import scarfFb from "../SCARF-FB.webp";
 import tsEagle from "../TS_EAGLE.webp";
 import tsLion from "../TS_LION.webp";
+import bagGreen from "../BAG_GREEN.webp";
+import bagBlue from "../BAG_BLUE.webp";
 
 // ─── Translations ─────────────────────────────────────────────────────────────
 
@@ -240,27 +242,45 @@ const PRODUCTS = [
     animal: "African Lion", animalZh: "非洲狮", animalTw: "非洲獅",
     nameEn: "Lion Tee", nameZh: "狮子T恤", nameTw: "獅子T恤",
     image: tsLion, org: "Habitat Watcher",
-    descEn: "Wear the pride. Every garment funds one field survey protecting Kenya's lions.",
-    descZh: "身披狮群荣耀。每件服装资助一次守护肯尼亚狮子的野外调查。",
-    descTw: "身披獅群榮耀。每件服裝資助一次守護肯亞獅子的野外調查。",
+    descEn: "Wear the pride. Every garment supports lion conservation in Kenya.",
+    descZh: "身披狮群荣耀。每件服装支持肯尼亚狮子保护。",
+    descTw: "身披獅群榮耀。每件服裝支持肯亞獅子保護。",
   },
   {
     id: 6, emoji: "🦅", bg: "#e0e8f0", series: "Eagle Series",
     animal: "Eagle", animalZh: "鹰", animalTw: "鷹",
     nameEn: "Cloud Tee", nameZh: "云端T恤", nameTw: "雲端T恤",
     image: tsEagle, org: "Habitat Watcher",
-    descEn: "Soaring above boundaries. Each garment funds one field survey.",
-    descZh: "翱翔于边界之上。每件服装资助一次野外调查。",
-    descTw: "翱翔於邊界之上。每件服裝資助一次野外調查。",
+    descEn: "Soaring above boundaries. Each garment supports raptor conservation in Kenya.",
+    descZh: "翱翔于边界之上。每件服装支持肯尼亚猛禽保护。",
+    descTw: "翱翔於邊界之上。每件服裝支持肯亞猛禽保護。",
+  },
+  {
+    id: 11, emoji: "🦅", bg: "#1f4d3d", series: "Eagle Series",
+    animal: "Eagle", animalZh: "鹰", animalTw: "鷹",
+    nameEn: "Eagle Tote (Forest Green)", nameZh: "雄鹰托特包（森林绿）", nameTw: "雄鷹托特包（森林綠）",
+    image: bagGreen, org: "Habitat Watcher",
+    descEn: "Carry the eagle's gaze with you. Each tote supports raptor conservation on the Maasai Mara.",
+    descZh: "随身携带雄鹰的目光。每只托特包支持马赛马拉猛禽保护。",
+    descTw: "隨身攜帶雄鷹的目光。每只托特包支持馬賽馬拉猛禽保護。",
+  },
+  {
+    id: 12, emoji: "🦅", bg: "#0f5c73", series: "Eagle Series",
+    animal: "Eagle", animalZh: "鹰", animalTw: "鷹",
+    nameEn: "Eagle Tote (Ocean Blue)", nameZh: "雄鹰托特包（海洋蓝）", nameTw: "雄鷹托特包（海洋藍）",
+    image: bagBlue, org: "Habitat Watcher",
+    descEn: "A statement tote inspired by the raptors of the Maasai Mara. Every purchase supports raptor conservation there.",
+    descZh: "灵感源自马赛马拉猛禽的托特包。每一次购买都支持猛禽保护。",
+    descTw: "靈感源自馬賽馬拉猛禽的托特包。每一次購買都支持猛禽保護。",
   },
   {
     id: 8, emoji: "🌿", bg: "#e8f0e8", series: "Ranger Collection",
     animal: "Multi-Species", animalZh: "多物种", animalTw: "多物種",
     nameEn: "Ranger Patch", nameZh: "巡护员徽章", nameTw: "巡護員徽章",
     image: patchImg, org: "Habitat Watcher",
-    descEn: "A collectible ranger patch honoring the frontline rangers who protect wildlife every day.",
-    descZh: "收藏版巡护员徽章，致敬每天守护野生动物的一线巡护员。",
-    descTw: "收藏版巡護員徽章，致敬每天守護野生動物的一線巡護員。",
+    descEn: "A ranger patch honoring the frontline rangers who protect wildlife every day.",
+    descZh: "巡护员徽章，致敬每天守护野生动物的一线巡护员。",
+    descTw: "巡護員徽章，致敬每天守護野生動物的一線巡護員。",
   },
   {
     id: 9, emoji: "🌍", bg: "#e8ede0", series: "Safari Collection",
